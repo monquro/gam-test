@@ -4059,19 +4059,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -4089,14 +4089,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -4113,20 +4113,20 @@
       "es": "¿Cuántos días de puente al año llueve?"
      },
      "options": [
-      3,
-      5,
-      7
+      4,
+      6,
+      8
      ],
-     "answer": 5,
+     "answer": 6,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.9일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.9 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.9 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.9일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.9 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.9 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -4574,19 +4574,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -4604,14 +4604,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -4628,20 +4628,20 @@
       "es": "¿Cuántos días de puente al año llueve?"
      },
      "options": [
-      3,
-      5,
-      7
+      4,
+      6,
+      8
      ],
-     "answer": 5,
+     "answer": 6,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.9일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.9 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.9 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.9일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.9 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.9 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -5089,19 +5089,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -5119,14 +5119,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -5143,20 +5143,20 @@
       "es": "¿Cuántos días de puente al año llueve?"
      },
      "options": [
-      3,
-      5,
-      7
+      4,
+      6,
+      8
      ],
-     "answer": 5,
+     "answer": 6,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.9일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.9 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.9 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.0일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.0 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.0 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -5604,19 +5604,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -5634,14 +5634,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -5658,20 +5658,20 @@
       "es": "¿Cuántos días de puente al año llueve?"
      },
      "options": [
-      3,
-      5,
-      7
+      4,
+      6,
+      8
      ],
-     "answer": 5,
+     "answer": 6,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.7일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.7 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.7 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.5일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.5 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.5 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -6119,19 +6119,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -6149,14 +6149,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -6184,9 +6184,9 @@
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.5일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.5 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.5 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.1일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.1 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.1 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -6634,19 +6634,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -6664,14 +6664,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -6699,9 +6699,9 @@
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.6일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.6 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.6 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.5일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.5 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.5 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -7149,19 +7149,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -7179,14 +7179,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -7203,20 +7203,20 @@
       "es": "¿Cuántos días de puente al año llueve?"
      },
      "options": [
-      3,
-      5,
-      7
+      4,
+      6,
+      8
      ],
-     "answer": 5,
+     "answer": 6,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.2일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.2 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.2 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.2일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.2 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.2 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -7664,19 +7664,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -7694,14 +7694,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -7719,19 +7719,19 @@
      },
      "options": [
       5,
-      7,
-      9
+      8,
+      11
      ],
-     "answer": 7,
+     "answer": 8,
      "unit": {
       "ko": "일",
       "en": " days",
       "es": " días"
      },
      "basis": {
-      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.6일",
-      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.6 a year",
-      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.6 al año"
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 7.9일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 7.9 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 7.9 al año"
      },
      "why": {
       "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
@@ -8103,19 +8103,19 @@
      },
      "options": [
       6,
-      9,
-      12
+      10,
+      14
      ],
-     "answer": 9,
+     "answer": 10,
      "unit": {
       "ko": "번",
       "en": " times",
       "es": " veces"
      },
      "basis": {
-      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
-      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
-      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11, 12/25~12/27",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11, Dec 25–Dec 27",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10, 25/12–27/12"
      },
      "why": {
       "ko": "단톡방에 날짜 공유할 차례 🎉",
@@ -8133,14 +8133,14 @@
      },
      "options": [
       2,
-      3,
+      11,
       12
      ],
      "answer": 2,
      "basis": {
-      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
-      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
-      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6 · 12월 3",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6 · Dec 3",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6 · 12: 3"
      },
      "why": {
       "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
@@ -8964,14 +8964,15 @@
    "2027-07": 1,
    "2027-08": 1,
    "2027-09": 1,
-   "2027-10": 2
+   "2027-10": 2,
+   "2027-12": 1
   }
  },
  "caveat": {
   "weather": {
-   "ko": "날씨는 매장 주변을 덮는 약 25km 격자의 ERA5 재분석 값이라 동네 관측소 기록과 다를 수 있습니다. 비·더위는 실내 방문 수요를 짐작하는 대리 지표일 뿐, 실제 방문이나 매출을 잰 숫자가 아닙니다.",
-   "en": "Weather comes from ERA5 reanalysis on a ~25 km grid around the store, so it can differ from a local station. Rain and heat are only proxies for indoor demand, not measured visits or sales.",
-   "es": "El clima viene del reanálisis ERA5 en una cuadrícula de ~25 km, así que puede diferir de una estación local. La lluvia y el calor solo aproximan la demanda bajo techo; no miden visitas ni ventas."
+   "ko": "날씨는 매장 주변을 덮는 약 25km 격자의 ERA5 재분석 값이라 동네 관측소 기록과 다를 수 있습니다. 특히 약한 비를 넓게 퍼뜨려서, 미국 매장 근처 관측소 4곳과 견주면 비 온 날이 1.2~1.5배 많게 나옵니다. 비·더위는 실내 방문 수요를 짐작하는 대리 지표일 뿐, 실제 방문이나 매출을 잰 숫자가 아닙니다.",
+   "en": "Weather comes from ERA5 reanalysis on a ~25 km grid around the store, so it can differ from a local station. It spreads light rain widely: next to 4 stations near US stores it shows 1.2–1.5× as many rainy days. Rain and heat are only proxies for indoor demand, not measured visits or sales.",
+   "es": "El clima viene del reanálisis ERA5 en una cuadrícula de ~25 km, así que puede diferir de una estación local. Extiende la lluvia ligera: frente a 4 estaciones cerca de tiendas en EE. UU. muestra 1,2–1,5 veces más días de lluvia. La lluvia y el calor solo aproximan la demanda bajo techo; no miden visitas ni ventas."
   },
   "holiday_US": {
    "ko": "공휴일은 Nager.Date의 연방 공휴일만 셉니다. 주마다 다른 공휴일과 개인 휴가는 빠집니다.",
@@ -8979,9 +8980,9 @@
    "es": "Solo feriados federales de Nager.Date; no incluye feriados estatales ni días personales."
   },
   "holiday_KR": {
-   "ko": "공휴일은 Nager.Date 기준이라 임시공휴일이 빠지고, 정부 발표와 다른 해가 있을 수 있습니다.",
-   "en": "Holidays follow Nager.Date: one-off holidays may be missing and some years can differ from official lists.",
-   "es": "Los feriados siguen Nager.Date: pueden faltar feriados puntuales y algunos años difieren del calendario oficial."
+   "ko": "2016~2025년 공휴일은 Nager.Date의 오류(2008년에 빠진 제헌절, 빠진 대체·임시공휴일과 선거일)를 관공서 공휴일 규정과 발표된 임시공휴일로 바로잡아 셌습니다. 2026년부터는 Nager.Date 기준입니다.",
+   "en": "For 2016–2025, Nager.Date errors (Constitution Day after 2008, missing substitute, temporary and election holidays) were corrected from Korea's official holiday rules. From 2026 we use Nager.Date.",
+   "es": "Para 2016–2025 se corrigieron errores de Nager.Date (Día de la Constitución tras 2008, feriados sustitutos, temporales y electorales faltantes) con las reglas oficiales de Corea. Desde 2026 se usa Nager.Date."
   }
  },
  "sources": [

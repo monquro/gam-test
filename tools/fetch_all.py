@@ -20,6 +20,10 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
+# 토요일 PHOTO DAY 의 지역·기간·주소는 build_photobox.py 한 곳에서만 정한다
+from build_photobox import HOLIDAY_YEARS, REGIONS as PB_REGIONS, Y0 as PB_Y0, Y1 as PB_Y1, \
+    holiday_url, weather_url
+
 # 윈도우 콘솔(cp949)은 한글 · 기호를 못 찍고 멈출 때가 있다. 출력만 UTF-8 로 맞춘다
 try:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -124,6 +128,15 @@ SOURCES: list[tuple[str, str, str]] = [
      "?format=geojson&starttime=2000-01-01&endtime=2024-12-31"
      "&minmagnitude=3.0&minlatitude=33&maxlatitude=39.5"
      "&minlongitude=124&maxlongitude=132&limit=20000"),
+
+    # ── 토요일 · PHOTO DAY — 포토부스 매장 지역(미국) · 한국 주요 도시 ──
+    *[(f"photobox/weather_{rid}.json",
+       f"{names[0]} 일별 강수·기온·구름양·일몰·낮 길이 {PB_Y0}~{PB_Y1} (Open-Meteo Archive · ERA5 고정)",
+       weather_url(lat, lon))
+      for rid, _, lat, lon, names in PB_REGIONS],
+
+    *[(f"photobox/holidays_{c}_{y}.json", f"{c} 공휴일 {y} (Nager.Date)", holiday_url(c, y))
+      for c in ("US", "KR") for y in HOLIDAY_YEARS],
 ]
 
 
@@ -162,6 +175,7 @@ def main() -> int:
     fail = 0
     for name, desc, url in SOURCES:
         dest = RAW / name
+        dest.parent.mkdir(parents=True, exist_ok=True)      # photobox/ 처럼 폴더가 있는 이름
         if dest.exists() and not force:
             print(f"  건너뜀  {name:<22} 이미 있음 ({dest.stat().st_size/1024:,.0f}KB)")
             continue

@@ -101,14 +101,26 @@ def get(name, url):
     return json.loads(body)
 
 
-def weather(rid, lat, lon):
-    d = get(f"weather_{rid}.json",
-            "https://archive-api.open-meteo.com/v1/archive"
+# 받을 주소 — tools/fetch_all.py 도 같은 주소로 받는다
+def weather_url(lat, lon):
+    return ("https://archive-api.open-meteo.com/v1/archive"
             f"?latitude={lat}&longitude={lon}"
             f"&start_date={Y0}-01-01&end_date={Y1}-12-31"
             "&daily=precipitation_sum,temperature_2m_max,temperature_2m_min,"
             "cloud_cover_mean,sunset,daylight_duration"
-            "&timezone=auto&models=era5")["daily"]
+            "&timezone=auto&models=era5")
+
+
+def holiday_url(country, year):
+    return f"https://date.nager.at/api/v3/PublicHolidays/{year}/{country}"
+
+
+# 지난 10년의 연휴 + 다가오는 해(NEXT)와 해를 넘기는 연휴를 보려고 그다음 해까지
+HOLIDAY_YEARS = range(Y0, NEXT + 2)
+
+
+def weather(rid, lat, lon):
+    d = get(f"weather_{rid}.json", weather_url(lat, lon))["daily"]
     rows = []
     for i, t in enumerate(d["time"]):
         rows.append({"d": dt.date.fromisoformat(t),
@@ -121,19 +133,53 @@ def weather(rid, lat, lon):
     return rows
 
 
+# Nager.Date 의 한국 과거 공휴일은 틀린 해가 있다 — 2008년에 빠진 제헌절이 들어 있고,
+# 대체공휴일 자리에 원래 날짜가 밀려 있고, 선거일·임시공휴일이 없다.
+# 그래서 2016~2025년은 관공서 공휴일 규정과 발표된 임시공휴일로 직접 적은 목록을 쓴다.
+#   (대) 대체공휴일   (선) 선거일   (임) 임시공휴일
+KR_HOLIDAYS = {
+    2016: "01-01 02-07 02-08 02-09 02-10(대) 03-01 05-05 05-06(임) 05-14 06-06 08-15 "
+          "09-14 09-15 09-16 10-03 10-09 12-25",
+    2017: "01-01 01-27 01-28 01-29 01-30(대) 03-01 05-03 05-05 05-09(선) 06-06 08-15 "
+          "10-02(임) 10-03 10-04 10-05 10-06(대) 10-09 12-25",
+    2018: "01-01 02-15 02-16 02-17 03-01 05-05 05-07(대) 05-22 06-06 06-13(선) 08-15 "
+          "09-23 09-24 09-25 09-26(대) 10-03 10-09 12-25",
+    2019: "01-01 02-04 02-05 02-06 03-01 05-05 05-06(대) 05-12 06-06 08-15 "
+          "09-12 09-13 09-14 10-03 10-09 12-25",
+    2020: "01-01 01-24 01-25 01-26 01-27(대) 03-01 04-15(선) 04-30 05-05 06-06 08-15 08-17(임) "
+          "09-30 10-01 10-02 10-03 10-09 12-25",
+    2021: "01-01 02-11 02-12 02-13 03-01 05-05 05-19 06-06 08-15 08-16(대) "
+          "09-20 09-21 09-22 10-03 10-04(대) 10-09 10-11(대) 12-25",
+    2022: "01-01 01-31 02-01 02-02 03-01 03-09(선) 05-05 05-08 06-01(선) 06-06 08-15 "
+          "09-09 09-10 09-11 09-12(대) 10-03 10-09 10-10(대) 12-25",
+    2023: "01-01 01-21 01-22 01-23 01-24(대) 03-01 05-05 05-27 05-29(대) 06-06 08-15 "
+          "09-28 09-29 09-30 10-02(임) 10-03 10-09 12-25",
+    2024: "01-01 02-09 02-10 02-11 02-12(대) 03-01 04-10(선) 05-05 05-06(대) 05-15 06-06 08-15 "
+          "09-16 09-17 09-18 10-01(임) 10-03 10-09 12-25",
+    2025: "01-01 01-27(임) 01-28 01-29 01-30 03-01 03-03(대) 05-05 05-06(대) 06-03(선) 06-06 08-15 "
+          "10-03 10-05 10-06 10-07 10-08(대) 10-09 12-25",
+}
+# 2026년부터는 Nager.Date 가 맞다(제헌절·노동절 공휴일 포함). 2027년 성탄절(토) 대체공휴일만 빠져 있다
+KR_ADD = {2027: ["12-27"]}
+
+
 def days_off(country, year):
-    """그 해에 쉬는 날(토·일 + 전국 공휴일)."""
-    hol = get(f"holidays_{country}_{year}.json",
-              f"https://date.nager.at/api/v3/PublicHolidays/{year}/{country}")
+    """그 해에 쉬는 날(토·일 + 전국 공휴일)과 공휴일 수."""
+    hol = get(f"holidays_{country}_{year}.json", holiday_url(country, year))
     # 미국은 연방 공휴일만 (주마다 다른 날은 뺀다)
-    days = {dt.date.fromisoformat(h["date"]) for h in hol
+    hols = {dt.date.fromisoformat(h["date"]) for h in hol
             if h["global"] and "Public" in h["types"]}
+    if country == "KR" and year in KR_HOLIDAYS:
+        hols = {dt.date.fromisoformat(f"{year}-{x[:5]}") for x in KR_HOLIDAYS[year].split()}
+    if country == "KR":
+        hols |= {dt.date.fromisoformat(f"{year}-{x}") for x in KR_ADD.get(year, [])}
+    days = set(hols)
     d = dt.date(year, 1, 1)
     while d.year == year:
         if d.weekday() >= 5:
             days.add(d)
         d += dt.timedelta(days=1)
-    return days, len({h["date"] for h in hol if h["global"] and "Public" in h["types"]})
+    return days, len(hols)
 
 
 def long_weekends(country, year):
@@ -595,18 +641,24 @@ THEMES = [
 
 CAVEAT_W = T(
     "날씨는 매장 주변을 덮는 약 25km 격자의 ERA5 재분석 값이라 동네 관측소 기록과 다를 수 있습니다. "
+    "특히 약한 비를 넓게 퍼뜨려서, 미국 매장 근처 관측소 4곳과 견주면 비 온 날이 1.2~1.5배 많게 나옵니다. "
     "비·더위는 실내 방문 수요를 짐작하는 대리 지표일 뿐, 실제 방문이나 매출을 잰 숫자가 아닙니다.",
     "Weather comes from ERA5 reanalysis on a ~25 km grid around the store, so it can differ from a local station. "
+    "It spreads light rain widely: next to 4 stations near US stores it shows 1.2–1.5× as many rainy days. "
     "Rain and heat are only proxies for indoor demand, not measured visits or sales.",
     "El clima viene del reanálisis ERA5 en una cuadrícula de ~25 km, así que puede diferir de una estación local. "
+    "Extiende la lluvia ligera: frente a 4 estaciones cerca de tiendas en EE. UU. muestra 1,2–1,5 veces más días de lluvia. "
     "La lluvia y el calor solo aproximan la demanda bajo techo; no miden visitas ni ventas.")
 CAVEAT_H = {
     "US": T("공휴일은 Nager.Date의 연방 공휴일만 셉니다. 주마다 다른 공휴일과 개인 휴가는 빠집니다.",
             "Holidays are federal ones from Nager.Date; state holidays and personal days off are not included.",
             "Solo feriados federales de Nager.Date; no incluye feriados estatales ni días personales."),
-    "KR": T("공휴일은 Nager.Date 기준이라 임시공휴일이 빠지고, 정부 발표와 다른 해가 있을 수 있습니다.",
-            "Holidays follow Nager.Date: one-off holidays may be missing and some years can differ from official lists.",
-            "Los feriados siguen Nager.Date: pueden faltar feriados puntuales y algunos años difieren del calendario oficial."),
+    "KR": T("2016~2025년 공휴일은 Nager.Date의 오류(2008년에 빠진 제헌절, 빠진 대체·임시공휴일과 선거일)를 "
+            "관공서 공휴일 규정과 발표된 임시공휴일로 바로잡아 셌습니다. 2026년부터는 Nager.Date 기준입니다.",
+            "For 2016–2025, Nager.Date errors (Constitution Day after 2008, missing substitute, temporary and election "
+            "holidays) were corrected from Korea's official holiday rules. From 2026 we use Nager.Date.",
+            "Para 2016–2025 se corrigieron errores de Nager.Date (Día de la Constitución tras 2008, feriados "
+            "sustitutos, temporales y electorales faltantes) con las reglas oficiales de Corea. Desde 2026 se usa Nager.Date."),
 }
 
 
