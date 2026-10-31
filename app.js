@@ -16,6 +16,7 @@ let QS = [];
 let idx = 0;
 let hits = 0;
 let MONTH = null;      // "2027-03"
+let PICK = null;       // 테마 화면에서 고른 테마 — START 를 누르면 시작
 
 /* ── 문구 ──────────────────────────────────────────── */
 const I18N = {
@@ -27,6 +28,10 @@ const I18N = {
     localTag: "📍 LOCAL",
     localBadge: (r) => `📍 ${r} 한정 문제`,
     myType: "MY PHOTO TYPE",
+    steps: ["지역", "테마", "Q1", "Q2", "Q3", "쿠폰"],
+    today: "TODAY · 오늘의 포토 퀴즈",
+    pickFirst: "스티커를 하나 골라 주세요",
+    snap: (t) => `${t} 로 찰칵!`,
     step1: "STEP 1 · 어느 나라 매장에 가세요?",
     pickArea: "어느 지역인가요?",
     areas: (n) => `지역 ${n}곳`,
@@ -82,6 +87,10 @@ const I18N = {
     localTag: "📍 LOCAL",
     localBadge: (r) => `📍 Only in ${r}`,
     myType: "MY PHOTO TYPE",
+    steps: ["Area", "Theme", "Q1", "Q2", "Q3", "Coupon"],
+    today: "TODAY · PHOTO QUIZ",
+    pickFirst: "Pick a sticker",
+    snap: (t) => `Snap ${t}!`,
     step1: "STEP 1 · Where do you usually visit us?",
     pickArea: "Which area?",
     areas: (n) => `${n} areas`,
@@ -137,6 +146,10 @@ const I18N = {
     localTag: "📍 LOCAL",
     localBadge: (r) => `📍 Solo en ${r}`,
     myType: "MI TIPO DE FOTO",
+    steps: ["Zona", "Tema", "P1", "P2", "P3", "Cupón"],
+    today: "HOY · QUIZ DE FOTOS",
+    pickFirst: "Elige una pegatina",
+    snap: (t) => `¡Clic en ${t}!`,
     step1: "PASO 1 · ¿Dónde nos visitas?",
     pickArea: "¿Qué zona?",
     areas: (n) => `${n} zonas`,
@@ -201,7 +214,42 @@ function recall(k) { try { return localStorage.getItem(k); } catch { return null
 
 function show(name) {
   VIEWS.forEach((v) => ($(`view-${v}`).hidden = v !== name));
+  document.body.dataset.view = name;      // 파란 화면의 크기가 단계마다 바뀐다
+  $("startbar").hidden = name !== "themes";
+  renderSteps();
   window.scrollTo({ top: 0 });
+}
+
+/* 위쪽 단계 막대: 지역 · 테마 · Q1 · Q2 · Q3 · 쿠폰 */
+function stepNow() {
+  const v = document.body.dataset.view;
+  if (v === "home") return 0;
+  if (v === "themes") return 1;
+  if (v === "quiz") return 2 + Math.min(idx, 2);
+  return 5;
+}
+function renderSteps() {
+  const now = stepNow();
+  $("steps").innerHTML = L().steps.map((name, i) => {
+    let cls = i < now ? "done" : i === now ? "now" : "";
+    if (i >= 2 && i <= 4 && QS[i - 2] && QS[i - 2].locked) cls += QS[i - 2].got ? " hit" : " miss";
+    return `<li class="${cls}"${i === now ? ' aria-current="step"' : ""}><span></span>${name}</li>`;
+  }).join("");
+}
+
+/* START — 3 · 2 · 1 세고 찰칵. 움직임을 줄인 사람에게는 바로 시작 */
+function countdown(done) {
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { done(); return; }
+  const box = $("countdown");
+  let n = 3;
+  box.hidden = false;
+  const tick = () => {
+    if (n === 0) { box.hidden = true; flash(); done(); return; }
+    box.innerHTML = `<b>${n}</b>`;
+    n--;
+    setTimeout(tick, 520);
+  };
+  tick();
 }
 
 function flash() {
@@ -257,6 +305,7 @@ function rerender() {
   if (!$("view-quiz").hidden) renderQ(!$("reveal").hidden);
   if (!$("view-result").hidden) renderResult(false);
   if (!$("view-coupon").hidden) renderCoupon();
+  renderSteps();
 }
 
 /* ── 1. 나라 → 지역 ──────────────────────────────────── */
@@ -301,6 +350,7 @@ function pickRegion(id) {
   REGION = D.regions.find((r) => r.id === id);
   if (!REGION) return;
   CTRY = REGION.country;
+  PICK = null;
   renderThemes();
   show("themes");
 }
@@ -315,19 +365,23 @@ function renderThemes() {
     const open = !!pack[t.id];
     const local = open && pack[t.id].some((q) => q.local);
     const b = document.createElement("button");
-    b.className = `tcard th-${t.id}` + (open ? "" : " locked");
-    b.style.animationDelay = `${i * 50}ms`;
+    b.className = `trow th-${t.id}` + (open ? "" : " locked");
+    b.style.setProperty("--i", i);
     b.disabled = !open;
-    // 인화된 사진 한 장처럼 — 위는 사진, 아래는 글
+    b.setAttribute("aria-pressed", String(PICK === t.id));
+    // 셀프 사진기 화면의 목록처럼 — 색 칸 · 이름 · 설명 · 번호
     b.innerHTML =
-      `<span class="tphoto"><span class="tnum">0${i + 1}</span>` +
+      `<span class="ticon" aria-hidden="true">${t.emoji}</span>` +
+      `<span class="ttext"><span class="ttitle">${tr(t.title)}</span>` +
+      `<span class="tblurb">${open ? tr(t.blurb) : L().locked}</span></span>` +
       (local ? `<span class="tlocal">${L().localTag}</span>` : "") +
-      `<span class="temoji" aria-hidden="true">${t.emoji}</span></span>` +
-      `<span class="ttitle">${tr(t.title)}</span>` +
-      `<span class="tblurb">${open ? tr(t.blurb) : L().locked}</span>`;
-    b.onclick = () => start(t.id);
+      `<span class="tnum" aria-hidden="true">0${i + 1}</span>`;
+    b.onclick = () => { PICK = t.id; renderThemes(); };
     $("themes").appendChild(b);
   });
+  const picked = PICK && D.themes.find((t) => t.id === PICK);
+  $("btn-start").disabled = !picked;
+  $("btn-start").textContent = picked ? L().snap(tr(picked.title)) : L().pickFirst;
 }
 
 /* ── 3. 문항 ────────────────────────────────────────── */
@@ -340,17 +394,9 @@ function start(themeId) {
   show("quiz");
 }
 
-function renderFilm() {
-  $("film").innerHTML = QS.map((q, i) => {
-    const cls = i < idx ? (q.got ? "hit" : "miss") : i === idx ? "now" : "";
-    const mark = i < idx ? (q.got ? "✓" : "✕") : i + 1;
-    return `<span class="${cls}">${mark}</span>`;
-  }).join("");
-}
-
 function renderQ(revealed) {
   const q = QS[idx];
-  renderFilm();
+  renderSteps();
   $("q-count").innerHTML = `<span aria-hidden="true">${THEME.emoji}</span> ` +
     `${tr(THEME.title)} · ${L().count(idx + 1, QS.length)}`;
   $("q-text").textContent = tr(q.text);
@@ -380,10 +426,11 @@ function answer(o, btn) {
   if (q.got) { hits++; confetti(btn); }
   flash();
   paintReveal(o);
+  renderSteps();
 }
 
 /* 정답이면 고른 보기 가운데서 색종이가 터진다. 움직임을 줄인 사람에게는 CSS 가 감춘다 */
-const CONFETTI = ["var(--primary)", "var(--sun)", "var(--blue)", "var(--ok)", "var(--t-holiday)"];
+const CONFETTI = ["var(--lime)", "var(--pink)", "var(--lav)", "var(--card)", "var(--t-sunny)"];
 function confetti(btn) {
   const box = $("confetti");
   const r = btn.getBoundingClientRect();
@@ -569,8 +616,10 @@ async function boot() {
   const guess = (navigator.language || "en").slice(0, 2);
   setLang(p.get("lang") || recall("photoday-lang") || (I18N[guess] ? guess : "en"));
   renderRegions();
+  renderSteps();
 
   $("btn-region").onclick = () => { renderRegions(); show("home"); };
+  $("btn-start").onclick = () => { if (PICK) countdown(() => start(PICK)); };
   $("btn-back").onclick = () => { renderThemes(); show("themes"); };
   $("btn-next").onclick = next;
   $("btn-more").onclick = () => { renderThemes(); show("themes"); };

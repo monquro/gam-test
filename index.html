@@ -5,53 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PHOTO DAY — 내 사진 찍는 날 찾기</title>
 <meta name="description" content="공개 날씨·공휴일 데이터로 만든 3문항 퀴즈. 풀고 나면 사진 찍으러 올 달을 고르고 쿠폰을 받습니다.">
-<meta name="theme-color" content="#fff3e8">
-<!-- 글꼴: 영문·숫자는 둥근 Fredoka, 한글과 본문은 Pretendard -->
+<meta name="theme-color" content="#2438f5">
+<!-- 글꼴: 로고·큰 숫자는 통통한 Bagel Fat One, 나머지는 Pretendard -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-view="home">
 
-<header class="topbar">
-  <span class="brand">
-    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
-      <rect x="3" y="8" width="26" height="19" rx="5"/>
-      <path d="M11 8l2-3.5h6L21 8"/>
-      <circle cx="16" cy="17.5" r="5.2"/>
-      <circle class="logo-dot" cx="24.5" cy="12.5" r="1.4"/>
-    </svg>
-    PHOTO DAY
-  </span>
-  <nav id="lang" class="lang" aria-label="Language"></nav>
-</header>
 <div id="marquee" class="marquee" aria-hidden="true"></div>
-<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<!-- 스티커 사진처럼 — 파란 도트 바탕에 스티커 카드 -->
+<header class="top">
+  <div class="top-row">
+    <nav id="lang" class="lang" aria-label="Language"></nav>
+  </div>
+  <div class="hero">
+    <span class="today" data-t="today"></span>
+    <p class="logo-big" aria-hidden="true">PHOTO<br> DAY</p>
+    <h1 data-t="heroTitle"></h1>
+    <p class="sub" data-t="heroLead"></p>
+  </div>
+  <ol id="steps" class="steps"></ol>
+</header>
 
 <main id="app">
 
   <!-- 1. 나라 → 지역 ─────────────────────────── -->
   <section id="view-home" class="view">
     <p id="shared-banner" class="banner" hidden></p>
-    <div class="hero">
-      <div class="hero-text">
-        <h1><span data-t="heroTitle"></span></h1>
-        <div class="stickers">
-          <span class="sticker k1" data-t="stk1"></span>
-          <span class="sticker k2" data-t="stk2"></span>
-          <span class="sticker k3" data-t="stk3"></span>
-        </div>
-      </div>
-      <!-- 포토부스 출력구에서 네 컷 사진이 내려온다 -->
-      <div class="booth" aria-hidden="true">
-        <div class="slot"></div>
-        <div class="print-window">
-          <div class="strip4"><span>☔</span><span>☀️</span><span>🎉</span><span>🌅</span></div>
-        </div>
-      </div>
-    </div>
     <p class="step" data-t="step1"></p>
     <div id="regions"></div>
   </section>
@@ -67,7 +51,6 @@
   <!-- 3. 문항 ─────────────────────────────────── -->
   <section id="view-quiz" class="view" hidden>
     <button id="btn-back" class="linkish" data-t="backThemes"></button>
-    <div id="film" class="film" aria-hidden="true"></div>
     <p id="q-count" class="muted small"></p>
     <p id="q-local" class="local-badge" hidden></p>
     <h2 id="q-text"></h2>
@@ -124,6 +107,12 @@
 
 </main>
 
+<!-- 테마를 고르면 아래 버튼이 "○○로 찰칵!" 으로 바뀐다 -->
+<div id="startbar" class="startbar" hidden>
+  <button id="btn-start" class="snap" disabled></button>
+</div>
+
+<div id="countdown" class="countdown" aria-hidden="true" hidden></div>
 <div id="flash" class="flash" aria-hidden="true"></div>
 <div id="confetti" class="confetti" aria-hidden="true"></div>
 <script src="app.js"></script>
