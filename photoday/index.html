@@ -2,99 +2,11 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PHOTO DAY — 내 사진 찍는 날 찾기</title>
-<meta name="description" content="공개 날씨·공휴일 데이터로 만든 3문항 퀴즈. 풀고 나면 사진 찍으러 올 달을 고르고 쿠폰을 받습니다.">
-<meta name="theme-color" content="#fff6ea">
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PHOTO DAY</title>
+<!-- 예전 주소(/photoday/)로 공유된 링크를 첫 화면으로 보낸다. 고른 언어·지역은 그대로 넘긴다 -->
+<script>location.replace("../" + location.search);</script>
+<meta http-equiv="refresh" content="0; url=../">
 </head>
-<body>
-
-<header class="topbar">
-  <span class="mark">PHOTO DAY <i>📸</i></span>
-  <nav id="lang" class="lang" aria-label="Language"></nav>
-</header>
-
-<main id="app">
-
-  <!-- 1. 지역 고르기 ──────────────────────────── -->
-  <section id="view-home" class="view">
-    <p id="shared-banner" class="banner" hidden></p>
-    <div class="hero">
-      <div class="strip" aria-hidden="true"><span>☔</span><span>☀️</span><span>🎉</span></div>
-      <h1 data-t="heroTitle"></h1>
-      <p class="lead" data-t="heroLead"></p>
-    </div>
-    <p class="step" data-t="step1"></p>
-    <div id="regions"></div>
-  </section>
-
-  <!-- 2. 테마 고르기 ──────────────────────────── -->
-  <section id="view-themes" class="view" hidden>
-    <button id="btn-region" class="linkish"></button>
-    <p class="step" data-t="step2"></p>
-    <div id="themes" class="grid"></div>
-    <p id="other-note" class="fineprint" data-t="otherNote" hidden></p>
-  </section>
-
-  <!-- 3. 문항 ─────────────────────────────────── -->
-  <section id="view-quiz" class="view" hidden>
-    <button id="btn-back" class="linkish" data-t="backThemes"></button>
-    <div id="film" class="film" aria-hidden="true"></div>
-    <p id="q-count" class="muted small"></p>
-    <h2 id="q-text"></h2>
-    <div id="q-options" class="choices"></div>
-    <div id="reveal" class="reveal" aria-live="polite" hidden></div>
-    <button id="btn-next" class="primary" hidden></button>
-  </section>
-
-  <!-- 4. 결과 + 달 고르기 ─────────────────────── -->
-  <section id="view-result" class="view" hidden>
-    <div class="polaroid">
-      <div class="photo"><span id="persona-emoji"></span></div>
-      <p id="persona" class="persona"></p>
-      <p id="score" class="muted small"></p>
-    </div>
-
-    <p class="step" data-t="step3"></p>
-    <p class="muted small" data-t="step3Lead"></p>
-    <div id="months" class="months"></div>
-
-    <label id="day-wrap" class="day" hidden>
-      <span data-t="dayLabel"></span>
-      <input type="date" id="day">
-    </label>
-    <button id="btn-coupon" class="primary" data-t="getCoupon" disabled></button>
-    <button id="btn-more" class="ghost" data-t="moreThemes"></button>
-
-    <div class="caveat"><b data-t="limits"></b><br><span id="caveat"></span></div>
-    <p id="source" class="fineprint"></p>
-  </section>
-
-  <!-- 5. 쿠폰 ─────────────────────────────────── -->
-  <section id="view-coupon" class="view" hidden>
-    <div class="ticket">
-      <span class="sample">SAMPLE</span>
-      <p class="t-small" data-t="couponFor"></p>
-      <p id="c-off" class="t-big"></p>
-      <p id="c-when" class="t-when"></p>
-      <p class="t-small" data-t="stackable"></p>
-      <div class="cut" aria-hidden="true"></div>
-      <p class="t-small" data-t="showCode"></p>
-      <p id="c-code" class="t-code"></p>
-    </div>
-    <div class="actions">
-      <button id="btn-gcal" class="primary" data-t="gcal"></button>
-      <button id="btn-cal" class="ghost" data-t="addCal"></button>
-      <button id="btn-share" class="ghost" data-t="share"></button>
-      <button id="btn-again" class="ghost" data-t="moreThemes"></button>
-    </div>
-    <p class="fineprint" data-t="sampleNote"></p>
-  </section>
-
-</main>
-
-<div id="flash" class="flash" aria-hidden="true"></div>
-<script src="app.js"></script>
-</body>
+<body><a href="../">PHOTO DAY</a></body>
 </html>

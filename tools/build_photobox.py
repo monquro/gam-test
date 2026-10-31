@@ -6,7 +6,7 @@
   날씨   Open-Meteo Archive (ERA5 고정) — 2016~2025 일별 강수·기온·구름·일몰
   공휴일 Nager.Date — 나라별 공휴일. 연휴(3일 이상 연속으로 쉬는 날)는 여기서 직접 센다
 
-원본은 data/raw/photobox/ 에 저장되고 (git·배포 제외), 결과는 photoday/photobox.json 하나로 나갑니다.
+원본은 data/raw/photobox/ 에 저장되고 (git·배포 제외), 결과는 photobox.json 하나로 나갑니다.
 
 실행 (저장소 최상위에서):
     python tools/build_photobox.py
@@ -31,7 +31,7 @@ except (AttributeError, ValueError):
 HERE = Path(__file__).resolve().parent
 APP = HERE.parent
 RAW = APP / "data" / "raw" / "photobox"
-OUT = APP / "photoday" / "photobox.json"   # PHOTO DAY 화면이 있는 폴더
+OUT = APP / "photobox.json"
 UA = {"User-Agent": "gam-test-class/1.0 (data analysis class)"}
 FORCE = "--force" in sys.argv
 
