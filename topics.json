@@ -127,6 +127,14 @@
       "title": "서울의 눈은 얼마나 오나",
       "blurb": "1990년부터 2024년까지, 서울의 하루 강설량",
       "source": "Open-Meteo Archive (ERA5 재분석)"
+    },
+    {
+      "id": "photo-day",
+      "emoji": "📸",
+      "title": "PHOTO DAY — 내 사진 찍는 날",
+      "blurb": "매장 지역별 날씨·연휴 3문항, 풀면 쿠폰",
+      "source": "Open-Meteo (ERA5) · Nager.Date",
+      "href": "photoday/"
     }
   ]
 }

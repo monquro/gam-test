@@ -1,10 +1,10 @@
 # 감 테스트 — 공개 데이터로 만든 추측 게임
 
-> **지금 첫 화면은 PHOTO DAY 입니다** (토요일에 바꿈).
+> **토요일에 더한 주제: PHOTO DAY** (`photoday/`, 주소 끝에 `/photoday/`).
+> 첫 화면의 열두 번째 카드를 누르면 열립니다. 고객용이라 화면이 따로입니다.
 > 언어(한국어·English·Español) → 매장 지역 → 테마 6개 중 하나 → 3문항 → 사진 찍으러 올 달 → 샘플 쿠폰.
-> 숫자는 `tools/build_photobox.py` 가 Open-Meteo(ERA5)·Nager.Date 에서 받아 계산해 `photobox.json` 에 넣습니다.
-> 아래의 10주제(`topics/`, `topics.json`)는 파일만 남아 있고 첫 화면에는 나오지 않습니다.
-> 바꾸기 전 상태는 `saturday-start` 표시(태그)에 있습니다.
+> 숫자는 `tools/build_photobox.py` 가 Open-Meteo(ERA5)·Nager.Date 에서 받아 계산해 `photoday/photobox.json` 에 넣습니다.
+> `topics.json` 의 이 카드에는 `href` 가 있어서, `build_topics.py` 를 다시 돌려도 지워지지 않습니다.
 
 주제 10개, 주제당 5문항. **모든 숫자는 공개 데이터에서 직접 계산한 값**입니다.
 토요일 실습의 골격 저장소이고, 이대로 Vercel에 올리면 바로 돌아갑니다.

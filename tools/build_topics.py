@@ -753,7 +753,8 @@ def main() -> None:
             {"max": 60, "text": "음…"},
             {"max": 999, "text": "꽤 멀리 가셨습니다"},
         ],
-        "topics": index,
+        # 다른 화면으로 가는 카드(href)는 계산하는 주제가 아니므로 있던 것을 그대로 둔다
+        "topics": index + [t for t in old.get("topics", []) if t.get("href")],
     }, ensure_ascii=False, indent=2))
 
     # 사람이 읽는 정답지
