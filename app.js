@@ -252,7 +252,7 @@ function renderRegions() {
     const b = document.createElement("button");
     b.className = "ccard";
     b.setAttribute("aria-pressed", String(c === CTRY));
-    b.innerHTML = `<span class="flag">${FLAG[c]}</span>` +
+    b.innerHTML = `<span class="flag" aria-hidden="true">${FLAG[c]}</span>` +
       `<span class="cname">${tr(D.countries[c])}</span>` +
       `<span class="ccount">${L().areas(n)}</span>`;
     b.onclick = () => { CTRY = c; renderRegions(); };
@@ -267,9 +267,10 @@ function renderRegions() {
   g.innerHTML = `<p class="cname">${L().pickArea}</p>`;
   const row = document.createElement("div");
   row.className = "chips";
-  D.regions.filter((r) => r.country === CTRY).forEach((r) => {
+  D.regions.filter((r) => r.country === CTRY).forEach((r, i) => {
     const b = document.createElement("button");
     b.className = "chip" + (r.other ? " other" : "");
+    b.style.setProperty("--i", i);           // 하나씩 차례로 튀어나오게
     b.textContent = tr(r.name);
     b.onclick = () => pickRegion(r.id);
     row.appendChild(b);
@@ -298,9 +299,10 @@ function renderThemes() {
     b.className = `tcard th-${t.id}` + (open ? "" : " locked");
     b.style.animationDelay = `${i * 50}ms`;
     b.disabled = !open;
+    // 인화된 사진 한 장처럼 — 위는 사진, 아래는 글
     b.innerHTML =
-      `<span class="tnum">0${i + 1}</span>` +
-      `<span class="temoji">${t.emoji}</span>` +
+      `<span class="tphoto"><span class="tnum">0${i + 1}</span>` +
+      `<span class="temoji" aria-hidden="true">${t.emoji}</span></span>` +
       `<span class="ttitle">${tr(t.title)}</span>` +
       `<span class="tblurb">${open ? tr(t.blurb) : L().locked}</span>`;
     b.onclick = () => start(t.id);
@@ -329,7 +331,8 @@ function renderFilm() {
 function renderQ(revealed) {
   const q = QS[idx];
   renderFilm();
-  $("q-count").textContent = `${THEME.emoji} ${tr(THEME.title)} · ${L().count(idx + 1, QS.length)}`;
+  $("q-count").innerHTML = `<span aria-hidden="true">${THEME.emoji}</span> ` +
+    `${tr(THEME.title)} · ${L().count(idx + 1, QS.length)}`;
   $("q-text").textContent = tr(q.text);
   $("q-options").innerHTML = "";
   q.options.forEach((o) => {
@@ -338,7 +341,7 @@ function renderQ(revealed) {
     b.type = "button";
     b.textContent = optLabel(q, o);
     b.dataset.v = String(o);
-    b.onclick = () => answer(o);
+    b.onclick = () => answer(o, b);
     $("q-options").appendChild(b);
   });
   $("reveal").hidden = true;
@@ -346,15 +349,35 @@ function renderQ(revealed) {
   if (revealed) paintReveal(q.mine);
 }
 
-function answer(o) {
+function answer(o, btn) {
   const q = QS[idx];
   if (q.locked) return;
   q.locked = true;
   q.mine = o;
   q.got = String(o) === String(q.answer);
-  if (q.got) hits++;
+  if (q.got) { hits++; confetti(btn); }
   flash();
   paintReveal(o);
+}
+
+/* 정답이면 고른 보기 가운데서 색종이가 터진다. 움직임을 줄인 사람에게는 CSS 가 감춘다 */
+const CONFETTI = ["var(--primary)", "var(--sun)", "var(--blue)", "var(--ok)", "var(--t-holiday)"];
+function confetti(btn) {
+  const box = $("confetti");
+  const r = btn.getBoundingClientRect();
+  for (let k = 0; k < 18; k++) {
+    const i = document.createElement("i");
+    const a = (Math.PI * 2 * k) / 18 + Math.random() * .4;
+    const d = 70 + Math.random() * 80;
+    i.style.left = `${r.left + r.width / 2}px`;
+    i.style.top = `${r.top + r.height / 2}px`;
+    i.style.setProperty("--dx", `${Math.cos(a) * d}px`);
+    i.style.setProperty("--dy", `${Math.sin(a) * d - 40}px`);
+    i.style.setProperty("--r", `${Math.random() * 540 - 270}deg`);
+    i.style.setProperty("--c", CONFETTI[k % CONFETTI.length]);
+    box.appendChild(i);
+  }
+  setTimeout(() => (box.innerHTML = ""), 1000);
 }
 
 function paintReveal(mine) {
@@ -410,7 +433,8 @@ function renderResult(fresh) {
   const top = stats ? Math.max(...list.map(({ m }) => stats[m].rain)) : -1;
 
   $("months").innerHTML = "";
-  list.forEach(({ y, m }) => {
+  $("months").classList.toggle("fresh", fresh);   // 처음 그릴 때만 카드가 튀어나온다
+  list.forEach(({ y, m }, i) => {
     const key = `${y}-${String(m).padStart(2, "0")}`;
     const n = lw[key] || 0;
     const s = stats && stats[m];
@@ -419,6 +443,7 @@ function renderResult(fresh) {
     if (n) tags.push(`<em class="tag hol">${L().tagHoliday}</em>`);
     const b = document.createElement("button");
     b.className = "month" + (key === MONTH ? " on" : "");
+    b.style.setProperty("--i", i);
     b.setAttribute("aria-pressed", String(key === MONTH));
     b.innerHTML =
       `<span class="mname">${monthName(m, y)}</span>` +
