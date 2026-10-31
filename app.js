@@ -22,6 +22,11 @@ const I18N = {
   ko: {
     heroTitle: "내 사진 찍는 날 찾기",
     heroLead: "퀴즈 3문항 · 30초 · 끝나면 쿠폰 🎟️",
+    stk1: "⚡ 30초 컷", stk2: "🎟️ 쿠폰 증정", stk3: "📍 우리 동네 데이터",
+    marquee: "3문항 30초 ✦ 맞히고 쿠폰 받기 ✦ 내 사진 찍는 날 찾기 ✦ 찰칵 📸",
+    localTag: "📍 LOCAL",
+    localBadge: (r) => `📍 ${r} 한정 문제`,
+    myType: "MY PHOTO TYPE",
     step1: "STEP 1 · 어느 나라 매장에 가세요?",
     pickArea: "어느 지역인가요?",
     areas: (n) => `지역 ${n}곳`,
@@ -72,6 +77,11 @@ const I18N = {
   en: {
     heroTitle: "Find your photo day",
     heroLead: "3 questions · 30 seconds · a coupon at the end 🎟️",
+    stk1: "⚡ 30-sec quiz", stk2: "🎟️ Free coupon", stk3: "📍 Local data",
+    marquee: "3 questions in 30 sec ✦ Get it right, get a coupon ✦ Find your photo day ✦ Snap 📸",
+    localTag: "📍 LOCAL",
+    localBadge: (r) => `📍 Only in ${r}`,
+    myType: "MY PHOTO TYPE",
     step1: "STEP 1 · Where do you usually visit us?",
     pickArea: "Which area?",
     areas: (n) => `${n} areas`,
@@ -122,6 +132,11 @@ const I18N = {
   es: {
     heroTitle: "Encuentra tu día de fotos",
     heroLead: "3 preguntas · 30 segundos · cupón al final 🎟️",
+    stk1: "⚡ Quiz de 30 s", stk2: "🎟️ Cupón gratis", stk3: "📍 Datos locales",
+    marquee: "3 preguntas en 30 s ✦ Acierta y gana un cupón ✦ Encuentra tu día de fotos ✦ Clic 📸",
+    localTag: "📍 LOCAL",
+    localBadge: (r) => `📍 Solo en ${r}`,
+    myType: "MI TIPO DE FOTO",
     step1: "PASO 1 · ¿Dónde nos visitas?",
     pickArea: "¿Qué zona?",
     areas: (n) => `${n} zonas`,
@@ -222,6 +237,9 @@ function setLang(l) {
     const v = L()[el.dataset.t];
     if (typeof v === "string") el.textContent = v;
   });
+  // 흐르는 띠 — 같은 문장을 두 번 이어 붙여야 끊김 없이 돈다
+  const m = `${L().marquee} ✦ `.repeat(3);
+  $("marquee").innerHTML = `<span>${m}</span><span>${m}</span>`;
   $("lang").innerHTML = "";
   LANGS.forEach(([k, name]) => {
     const b = document.createElement("button");
@@ -295,6 +313,7 @@ function renderThemes() {
   $("themes").innerHTML = "";
   D.themes.forEach((t, i) => {
     const open = !!pack[t.id];
+    const local = open && pack[t.id].some((q) => q.local);
     const b = document.createElement("button");
     b.className = `tcard th-${t.id}` + (open ? "" : " locked");
     b.style.animationDelay = `${i * 50}ms`;
@@ -302,6 +321,7 @@ function renderThemes() {
     // 인화된 사진 한 장처럼 — 위는 사진, 아래는 글
     b.innerHTML =
       `<span class="tphoto"><span class="tnum">0${i + 1}</span>` +
+      (local ? `<span class="tlocal">${L().localTag}</span>` : "") +
       `<span class="temoji" aria-hidden="true">${t.emoji}</span></span>` +
       `<span class="ttitle">${tr(t.title)}</span>` +
       `<span class="tblurb">${open ? tr(t.blurb) : L().locked}</span>`;
@@ -334,6 +354,8 @@ function renderQ(revealed) {
   $("q-count").innerHTML = `<span aria-hidden="true">${THEME.emoji}</span> ` +
     `${tr(THEME.title)} · ${L().count(idx + 1, QS.length)}`;
   $("q-text").textContent = tr(q.text);
+  $("q-local").hidden = !q.local;
+  if (q.local) $("q-local").textContent = L().localBadge(tr(REGION.name));
   $("q-options").innerHTML = "";
   q.options.forEach((o) => {
     const b = document.createElement("button");

@@ -27,6 +27,8 @@
   </span>
   <nav id="lang" class="lang" aria-label="Language"></nav>
 </header>
+<div id="marquee" class="marquee" aria-hidden="true"></div>
+<div class="blobs" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <main id="app">
 
@@ -35,8 +37,12 @@
     <p id="shared-banner" class="banner" hidden></p>
     <div class="hero">
       <div class="hero-text">
-        <h1 data-t="heroTitle"></h1>
-        <p class="lead" data-t="heroLead"></p>
+        <h1><span data-t="heroTitle"></span></h1>
+        <div class="stickers">
+          <span class="sticker k1" data-t="stk1"></span>
+          <span class="sticker k2" data-t="stk2"></span>
+          <span class="sticker k3" data-t="stk3"></span>
+        </div>
       </div>
       <!-- 포토부스 출력구에서 네 컷 사진이 내려온다 -->
       <div class="booth" aria-hidden="true">
@@ -63,6 +69,7 @@
     <button id="btn-back" class="linkish" data-t="backThemes"></button>
     <div id="film" class="film" aria-hidden="true"></div>
     <p id="q-count" class="muted small"></p>
+    <p id="q-local" class="local-badge" hidden></p>
     <h2 id="q-text"></h2>
     <div id="q-options" class="choices"></div>
     <div id="reveal" class="reveal" aria-live="polite" hidden></div>
@@ -72,6 +79,7 @@
   <!-- 4. 결과 + 달 고르기 ─────────────────────── -->
   <section id="view-result" class="view" hidden>
     <div class="polaroid">
+      <span class="ptag" data-t="myType"></span>
       <div class="photo"><span id="persona-emoji" aria-hidden="true"></span></div>
       <p id="persona" class="persona"></p>
       <p id="score" class="muted small"></p>

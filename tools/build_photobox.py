@@ -40,6 +40,7 @@ YEARS = Y1 - Y0 + 1
 NEXT = 2027                    # 연휴 문항은 다가오는 해
 RAIN_MM = 1.0                  # 비 온 날 = 하루 강수량 1mm 이상
 CLEAR_CLOUD = 40               # 맑은 날 = 비 1mm 미만 + 하루 평균 구름양 40% 이하
+WARM_C = 25                    # 반팔 주말 = 토·일 낮 최고기온 25°C(77°F) 이상
 
 # 미국은 매장이 있는 지역만, 한국은 광역시와 제주. 같은 도시의 매장은 날씨가 같으므로 한 지역으로 묶는다.
 REGIONS = [
@@ -333,21 +334,19 @@ def sunny_theme(W, nm, unit):
         hot[x["d"].month].append(x["hi"])
     h_scores = {m: sum(v) / len(v) for m, v in hot.items()}
     u = "°F" if unit == "F" else "°C"
+    # '맑은 주말이 많은 달'은 구름 기준을 조금만 바꿔도 답이 뒤집혀서(점검 결과) 뺐다.
+    # 대신 기온으로 세는 '반팔 주말' — 기온은 비·구름보다 덜 흔들린다
+    warm = [x for x in wk if x["hi"] >= WARM_C]
+    warm_year = len(warm) / YEARS
     qs = [
-        q_month("s1",
-                T("맑은 주말이 가장 많은 달은?",
-                  "Which month has the most clear weekend days?",
-                  "¿Qué mes tiene más fines de semana despejados?"),
-                c_scores,
-                T(f"맑은 날 = 강수 {RAIN_MM:g}mm 미만 + 하루 평균 구름양 {CLEAR_CLOUD}% 이하. {Y0}~{Y1}년 달마다 맑은 토·일 평균: " +
-                  " · ".join(f"{MON_KO[m-1]} {c_scores[m]:.1f}일" for m in range(1, 13)),
-                  f"Clear = <{RAIN_MM:g} mm rain and ≤{CLEAR_CLOUD}% average cloud cover. Clear Sat/Sun per month, {Y0}–{Y1}: " +
-                  " · ".join(f"{dt.date(2000, m, 1):%b} {c_scores[m]:.1f}" for m in range(1, 13)),
-                  f"Despejado = <{RAIN_MM:g} mm de lluvia y ≤{CLEAR_CLOUD}% de nubes. Sáb/dom despejados por mes, {Y0}–{Y1}: " +
-                  " · ".join(f"{m}: {c_scores[m]:.1f}" for m in range(1, 13))),
-                T("밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
-                  "One shot outside, one in the booth — that's the month",
-                  "Una foto afuera y otra en la cabina: ese es el mes")),
+        q_num("s1", T("", "", ""), warm_year, DAYS, 1,
+              T(f"{Y0}~{Y1}년 토·일 중 낮 최고기온 {deg(WARM_C, unit):.0f}{u} 이상인 날을 세어 평균하면 1년에 {warm_year:.1f}일 "
+                f"(주말은 1년에 약 104일)",
+                f"Sat/Sun with a high of {deg(WARM_C, unit):.0f}{u} or more, {Y0}–{Y1}: {warm_year:.1f} a year (out of ~104 weekend days)",
+                f"Sáb/dom con máxima de {deg(WARM_C, unit):.0f}{u} o más, {Y0}–{Y1}: {warm_year:.1f} al año (de ~104 días de finde)"),
+              T("반팔 주말엔 밖에서 한 장, 부스에서 한 장 👕",
+                "T-shirt weekend: one shot outside, one in the booth 👕",
+                "Finde de manga corta: una foto afuera y otra en la cabina 👕")),
         q_month("s2",
                 T("주말 낮 기온이 가장 높은 달은?",
                   "Which month has the hottest weekend afternoons?",
@@ -387,7 +386,8 @@ def holiday_theme(country, W):
     by_m = Counter()
     for r in runs:
         for d in r:
-            by_m[d.month] += 1
+            if d.year == NEXT:              # 해를 넘기는 연휴의 다음 해 날짜는 세지 않는다
+                by_m[d.month] += 1
     m_scores = {m: by_m.get(m, 0) for m in range(1, 13)}
     qs = [
         q_num("h1",
@@ -433,6 +433,7 @@ def holiday_theme(country, W):
                    T("긴 연휴엔 여행 사진도, 부스 사진도 한 번에",
                      "Long break = travel pics and booth pics",
                      "Puente largo = fotos de viaje y de cabina"), lo=3)
+    q_long["tkey"] = "h3long"
     qs.append(q2 if q2 is not None else q_long)
 
     if W is None:                               # 지역 '기타' — 날씨가 없으니 세 번째도 달력으로
@@ -458,7 +459,7 @@ def holiday_theme(country, W):
         lw = {d for r in long_weekends(country, y) for d in r}
         off_rain += sum(1 for x in W if x["d"] in lw and x["rain"] >= RAIN_MM)
     per_year = off_rain / YEARS
-    qs.append(q_num("h3",
+    rain_q = q_num("h3",
                     T("연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
                       "How many long-weekend days a year turn out rainy?",
                       "¿Cuántos días de puente al año llueve?"),
@@ -468,7 +469,9 @@ def holiday_theme(country, W):
                       f"Días de puente con ≥{RAIN_MM:g} mm de lluvia, {Y0}–{Y1}: {per_year:.1f} al año"),
                     T("쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
                       "Day off and it's raining? That's your photo day 📸",
-                      "¿Día libre y llueve? Ese es tu día de fotos 📸")))
+                      "¿Día libre y llueve? Ese es tu día de fotos 📸"))
+    rain_q["tkey"] = "h3rain"
+    qs.append(rain_q)
     return qs
 
 
@@ -662,6 +665,207 @@ CAVEAT_H = {
 }
 
 
+# ════════════════════════════════════════════════════════════════
+# 우리 동네 문항 — 지역마다 하나, 그 지역다운 질문으로 테마 문항 하나를 바꾼다
+#   (테마, 바꿀 문항, 종류)
+# ════════════════════════════════════════════════════════════════
+LOCAL = {
+    "la":         ("rainy", "r3", "rain_days"),       # '남캘리포니아엔 비가 안 온다'
+    "pleasanton": ("rainy", "r3", "summer_rain"),     # 베이 지역의 마른 여름
+    "milpitas":   ("rainy", "r3", "summer_rain"),
+    "honolulu":   ("golden", "g2", "sunset_span"),    # 하와이는 서머타임이 없다 (g1 늦은 일몰과 이어서 묻는다)
+    "carrollton": ("sunny", "s2", "hot100"),          # 텍사스의 100°F
+    "frisco":     ("sunny", "s2", "hot100"),
+    "annarbor":   ("cozy", "c3", "freeze"),           # 미시간의 얼어붙는 밤
+    "seoul":      ("sunny", "s2", "tropical"),        # 서울 열대야
+    "busan":      ("cozy", "c3", "freeze"),           # 따뜻한 부산의 겨울
+    "incheon":    ("rainy", "r3", "downpour"),
+    "daegu":      ("sunny", "s2", "heatwave"),        # 대프리카
+    "daejeon":    ("cozy", "c3", "swing"),            # 분지의 큰 일교차
+    "gwangju":    ("sunny", "s2", "heatwave"),
+    "ulsan":      ("rainy", "r3", "downpour"),
+    "jeju":       ("rainy", "r3", "rain_days"),       # 비 많은 섬
+}
+
+
+def local_question(kind, W, nm, unit):
+    u = "°F" if unit == "F" else "°C"
+    per = lambda cond: sum(1 for x in W if cond(x)) / YEARS
+    c = nm
+    if kind == "rain_days":
+        v = per(lambda x: x["rain"] >= RAIN_MM)
+        return q_num("lc", T(f"{c['ko']}에서 1년 중 비 온 날(하루 {RAIN_MM:g}mm 이상)은 며칠일까?",
+                             f"How many days a year does it rain in {c['en']} (≥{RAIN_MM:g} mm)?",
+                             f"¿Cuántos días al año llueve en {c['es']} (≥{RAIN_MM:g} mm)?"),
+                     v, DAYS, 5 if v >= 20 else 2,
+                     T(f"{Y0}~{Y1}년 하루 강수량 {RAIN_MM:g}mm 이상인 날을 세어 평균하면 1년에 {v:.1f}일",
+                       f"Days with ≥{RAIN_MM:g} mm, {Y0}–{Y1}: {v:.1f} a year", f"Días con ≥{RAIN_MM:g} mm, {Y0}–{Y1}: {v:.1f} al año"),
+                     T("동네 날씨를 알면 사진 찍을 날이 보여요", "Know your local weather, find your photo day",
+                       "Conoce tu clima local y encuentra tu día de fotos"))
+    if kind == "summer_rain":
+        v = per(lambda x: x["d"].month in (6, 7, 8) and x["rain"] >= RAIN_MM)
+        return q_num("lc", T(f"{c['ko']}의 여름(6~8월) 석 달 동안 비 온 날(1mm 이상)은 며칠일까?",
+                             f"Over summer (Jun–Aug) in {c['en']}, how many days get rain (≥1 mm)?",
+                             f"En verano (jun–ago) en {c['es']}, ¿cuántos días llueve (≥1 mm)?"),
+                     v, DAYS, 1,
+                     T(f"{Y0}~{Y1}년 6~8월 중 하루 강수량 1mm 이상인 날, 1년 평균 {v:.1f}일",
+                       f"Jun–Aug days with ≥1 mm, {Y0}–{Y1}: {v:.1f} a year", f"Días de jun–ago con ≥1 mm, {Y0}–{Y1}: {v:.1f} al año"),
+                     T("마른 여름엔 햇볕 피해 시원한 부스로 🧊", "Dry summers mean sunny days — cool off in the booth 🧊",
+                       "Veranos secos: refréscate en la cabina 🧊"))
+    if kind == "hot100":
+        v = per(lambda x: x["hi"] >= 37.8)
+        return q_num("lc", T(f"{c['ko']}에서 낮 최고기온이 100°F(37.8°C)를 넘는 날은 1년에 며칠일까?",
+                             f"How many days a year does {c['en']} hit 100°F?",
+                             f"¿Cuántos días al año {c['es']} llega a 100°F?"),
+                     v, DAYS, 1,
+                     T(f"{Y0}~{Y1}년 낮 최고기온 100°F(37.8°C) 이상인 날, 1년 평균 {v:.1f}일. 격자 평균이라 공항 관측보다 적게 나올 수 있어요",
+                       f"Days with a high of 100°F or more, {Y0}–{Y1}: {v:.1f} a year. Grid averages can read lower than the airport station",
+                       f"Días con máxima de 100°F o más, {Y0}–{Y1}: {v:.1f} al año. El promedio de cuadrícula puede quedar por debajo del aeropuerto"),
+                     T("텍사스 더위엔 에어컨 빵빵한 부스가 정답 🥵", "Texas heat? The booth has A/C 🥵",
+                       "¿Calor de Texas? La cabina tiene aire acondicionado 🥵"))
+    if kind == "freeze":
+        v = per(lambda x: x["lo"] <= 0)
+        return q_num("lc", T(f"{c['ko']}에서 밤 기온이 영하(0°C·32°F 이하)로 내려가는 날은 1년에 며칠일까?",
+                             f"How many nights a year does {c['en']} drop to freezing (32°F / 0°C or below)?",
+                             f"¿Cuántas noches al año {c['es']} baja de 0°C (32°F)?"),
+                     v, DAYS, 2 if v < 20 else 10,
+                     T(f"{Y0}~{Y1}년 하루 최저기온 0°C 이하인 날, 1년 평균 {v:.1f}일",
+                       f"Days with a low of 32°F (0°C) or below, {Y0}–{Y1}: {v:.1f} a year",
+                       f"Días con mínima de 0°C (32°F) o menos, {Y0}–{Y1}: {v:.1f} al año"),
+                     T("추운 밤엔 따뜻한 실내에서 한 컷 🧣", "Freezing night? Warm up inside for a shot 🧣",
+                       "¿Noche helada? Una foto bajo techo 🧣"))
+    if kind == "tropical":
+        v = per(lambda x: x["lo"] >= 25)
+        return q_num("lc", T(f"{c['ko']}의 열대야(밤 최저기온 25°C 이상)는 1년에 며칠일까?",
+                             f"How many 'tropical nights' (low of 25°C / 77°F or more) does {c['en']} get a year?",
+                             f"¿Cuántas 'noches tropicales' (mínima de 25°C o más) tiene {c['es']} al año?"),
+                     v, DAYS, 2,
+                     T(f"{Y0}~{Y1}년 하루 최저기온 25°C 이상인 날, 1년 평균 {v:.1f}일. 격자 평균이라 도심 관측보다 적게 나와요",
+                       f"Days with a low of 25°C or more, {Y0}–{Y1}: {v:.1f} a year. Grid averages read lower than downtown stations",
+                       f"Días con mínima de 25°C o más, {Y0}–{Y1}: {v:.1f} al año. El promedio de cuadrícula queda por debajo del centro"),
+                     T("잠 못 드는 밤엔 야간 네컷 🌙", "Can't sleep? Late-night photo strip 🌙",
+                       "¿No puedes dormir? Fotos de medianoche 🌙"))
+    if kind == "heatwave":
+        v = per(lambda x: x["hi"] >= 33)
+        return q_num("lc", T(f"{c['ko']}에서 낮 최고기온 33°C 이상인 폭염일은 1년에 며칠일까?",
+                             f"How many heatwave days (high of 33°C / 91°F or more) does {c['en']} get a year?",
+                             f"¿Cuántos días de ola de calor (máxima de 33°C o más) tiene {c['es']} al año?"),
+                     v, DAYS, 2,
+                     T(f"{Y0}~{Y1}년 하루 최고기온 33°C 이상인 날, 1년 평균 {v:.1f}일. 격자 평균이라 도심 관측보다 적게 나와요",
+                       f"Days with a high of 33°C or more, {Y0}–{Y1}: {v:.1f} a year. Grid averages read lower than downtown stations",
+                       f"Días con máxima de 33°C o más, {Y0}–{Y1}: {v:.1f} al año. El promedio de cuadrícula queda por debajo del centro"),
+                     T("폭염엔 시원한 부스로 피서 🧊", "Heatwave escape: the booth 🧊", "Escapa del calor en la cabina 🧊"))
+    if kind == "downpour":
+        v = per(lambda x: x["rain"] >= 30)
+        return q_num("lc", T(f"{c['ko']}에서 하루 30mm 넘게 쏟아진 '물폭탄' 날은 1년에 며칠일까?",
+                             f"How many days a year does {c['en']} get a downpour (≥30 mm)?",
+                             f"¿Cuántos días al año cae un aguacero (≥30 mm) en {c['es']}?"),
+                     v, DAYS, 1,
+                     T(f"{Y0}~{Y1}년 하루 강수량 30mm 이상인 날, 1년 평균 {v:.1f}일",
+                       f"Days with ≥30 mm, {Y0}–{Y1}: {v:.1f} a year", f"Días con ≥30 mm, {Y0}–{Y1}: {v:.1f} al año"),
+                     T("물폭탄 날엔 무조건 실내 ☔", "Downpour day = indoor day ☔", "Día de aguacero = día bajo techo ☔"))
+    if kind == "swing":
+        v = per(lambda x: x["hi"] - x["lo"] >= 10)
+        return q_num("lc", T(f"{c['ko']}에서 낮과 밤 기온 차(일교차)가 10°C 넘는 날은 1년에 며칠일까?",
+                             f"How many days a year does {c['en']} swing 10°C (18°F) or more between day and night?",
+                             f"¿Cuántos días al año {c['es']} cambia 10°C o más entre el día y la noche?"),
+                     v, DAYS, 10,
+                     T(f"{Y0}~{Y1}년 하루 최고기온 − 최저기온이 10°C 이상인 날, 1년 평균 {v:.1f}일",
+                       f"Days where high − low ≥ 10°C, {Y0}–{Y1}: {v:.1f} a year",
+                       f"Días con máxima − mínima ≥ 10°C, {Y0}–{Y1}: {v:.1f} al año"),
+                     T("일교차 큰 날엔 겉옷 챙겨서 저녁엔 실내로 🧥", "Big swing day: bring a jacket, head inside at night 🧥",
+                       "Día de gran cambio: lleva chaqueta y entra de noche 🧥"))
+    if kind == "sunset_span":
+        W25 = [x for x in W if x["d"].year == Y1]
+        ss = [mins(x["sunset"]) for x in W25]
+        v = max(ss) - min(ss)
+        return q_num("lc", T(f"하와이는 서머타임이 없어요. {c['ko']}에서 해가 가장 일찍 질 때와 가장 늦게 질 때는 몇 분 차이일까? ({Y1}년)",
+                             f"Hawaii skips daylight saving. In {c['en']}, how many minutes apart are the earliest and latest sunsets? ({Y1})",
+                             f"Hawái no cambia de horario. En {c['es']}, ¿cuántos minutos separan el atardecer más temprano del más tardío? ({Y1})"),
+                     v, T("분", " min", " min"), 10,
+                     T(f"{Y1}년 일몰 시각 가장 늦은 {hhmm(max(ss))} − 가장 이른 {hhmm(min(ss))} = {v}분",
+                       f"{Y1} sunsets: latest {hhmm(max(ss))} − earliest {hhmm(min(ss))} = {v} min",
+                       f"Atardeceres {Y1}: más tardío {hhmm(max(ss))} − más temprano {hhmm(min(ss))} = {v} min"),
+                     T("1년 내내 비슷한 골든아워 — 언제 와도 노을 사진 🌅", "Golden hour stays steady all year 🌅",
+                       "La hora dorada casi no cambia en todo el año 🌅"))
+    raise ValueError(kind)
+
+
+# 문항 문장 — 기준(기간·단위·문턱)을 문장 안에 적고, 손님이 궁금해할 말투로.
+# {c} 지역 · {country} 나라 · {warm} 반팔 기준 온도
+QTEXT = {
+    "r1": T("{c}에서 우산이 필요한 주말(토·일, 하루 비 1mm 이상)은 1년에 며칠일까?",
+            "In {c}, how many weekend days (Sat/Sun) a year need an umbrella (≥1 mm of rain)?",
+            "En {c}, ¿cuántos días de finde (sáb/dom) al año necesitas paraguas (≥1 mm de lluvia)?"),
+    "r2": T("비 오는 주말(토·일, 1mm 이상)이 가장 많은 달은? ({Y0}~{Y1} 평균)",
+            "Which month has the most rainy weekend days (≥1 mm, {Y0}–{Y1} avg.)?",
+            "¿Qué mes tiene más días de finde con lluvia (≥1 mm, promedio {Y0}–{Y1})?"),
+    "r3": T("비가 가장 많이 쏟아지는 계절은? (계절별 강수량 합계, {Y0}~{Y1} 평균)",
+            "Which season pours the most? (total rain per season, {Y0}–{Y1} avg.)",
+            "¿Qué estación llueve más? (lluvia total por estación, promedio {Y0}–{Y1})"),
+    "s1": T("{c}의 '반팔 주말'(토·일 낮 최고 {warm} 이상)은 1년에 며칠일까?",
+            "How many 'T-shirt weekend days' (Sat/Sun high of {warm}+) does {c} get a year?",
+            "¿Cuántos 'días de finde de manga corta' (sáb/dom, máxima de {warm}+) tiene {c} al año?"),
+    "s2": T("주말 낮이 가장 뜨거운 달은? (토·일 최고기온 평균, {Y0}~{Y1})",
+            "Which month has the hottest weekend afternoons? (avg. Sat/Sun high, {Y0}–{Y1})",
+            "¿Qué mes tiene las tardes de finde más calurosas? (máxima media sáb/dom, {Y0}–{Y1})"),
+    "s3": T("하늘이 맑은 주말(토·일, 비 1mm 미만·구름양 40% 이하)은 1년에 며칠일까?",
+            "How many clear weekend days (Sat/Sun, <1 mm rain, ≤40% cloud) does {c} get a year?",
+            "¿Cuántos días de finde despejados (sáb/dom, <1 mm, ≤40% de nubes) tiene {c} al año?"),
+    "h1": T("{NEXT}년 {country}, 휴가 안 내고도 3일 이상 쉬는 연휴는 몇 번일까?",
+            "In {NEXT}, how many 3-day-plus weekends does {country} get without taking a day off?",
+            "En {NEXT}, ¿cuántos puentes de 3+ días tiene {country} sin pedir días libres?"),
+    "h2": T("{NEXT}년, 3일 이상 연휴로 쉬는 날이 가장 많은 달은?",
+            "In {NEXT}, which month has the most days inside 3-day-plus weekends?",
+            "En {NEXT}, ¿qué mes tiene más días dentro de puentes de 3+ días?"),
+    "h3rain": T("쉬는 날인데 비까지! 3일 이상 연휴 중 비(1mm 이상) 온 날은 1년에 며칠일까? ({Y0}~{Y1} 평균)",
+                "Day off and it's raining! How many long-weekend days a year get rain (≥1 mm)? ({Y0}–{Y1} avg.)",
+                "¡Día libre y llueve! ¿Cuántos días de puente al año llueve (≥1 mm)? (promedio {Y0}–{Y1})"),
+    "h3long": T("{NEXT}년 가장 긴 연휴는 며칠일까? (휴가 없이 이어서 쉬는 날만)",
+                "How long is the longest break in {NEXT}? (no extra days off)",
+                "¿Cuántos días dura el puente más largo de {NEXT}? (sin días extra)"),
+    "g1": T("골든아워 사진 찍기 좋은 여름 저녁! {c}에서 해가 가장 늦게 지는 시각은? ({Y1}년, 현지 시간)",
+            "Golden-hour season! What's the latest sunset in {c}? ({Y1}, local time)",
+            "¡Temporada de hora dorada! ¿Cuál es el atardecer más tardío en {c}? ({Y1}, hora local)"),
+    "g2": T("그럼 해가 가장 일찍 지는 날의 일몰 시각은? ({Y1}년, 현지 시간)",
+            "And the earliest sunset of the year? ({Y1}, local time)",
+            "¿Y el atardecer más temprano del año? ({Y1}, hora local)"),
+    "g3": T("낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까? ({Y1}년)",
+            "How many more hours of daylight does the longest day have than the shortest? ({Y1})",
+            "¿Cuántas horas más de luz tiene el día más largo que el más corto? ({Y1})"),
+    "c1": T("1년 중 가장 추운 달은? (아침 최저기온 평균, {Y0}~{Y1})",
+            "Which month is the coldest? (avg. morning low, {Y0}–{Y1})",
+            "¿Cuál es el mes más frío? (mínima media, {Y0}–{Y1})"),
+    "c2": T("지난 10년({Y0}~{Y1}) 중 가장 추웠던 아침은 몇 도였을까?",
+            "What was the coldest morning of the last 10 years ({Y0}–{Y1})?",
+            "¿Cuál fue la mañana más fría de los últimos 10 años ({Y0}–{Y1})?"),
+    "c3": T("가장 더운 달과 가장 추운 달, 낮 최고기온 평균은 몇 도 차이일까?",
+            "How many degrees apart are the warmest and coldest months (avg. daytime high)?",
+            "¿Cuántos grados separan el mes más cálido del más frío (máxima media)?"),
+    "d1": T("지난 10년({Y0}~{Y1}), 크리스마스(12/25)에 비(1mm 이상)가 온 해는 몇 번일까?",
+            "In the last 10 years ({Y0}–{Y1}), how many Christmases (Dec 25) got rain (≥1 mm)?",
+            "En los últimos 10 años ({Y0}–{Y1}), ¿cuántas Navidades (25/12) llovió (≥1 mm)?"),
+    "d2": T("핼러윈(10/31) 낮 최고기온은 평균 몇 도일까? ({Y0}~{Y1})",
+            "What's the average high on Halloween (Oct 31)? ({Y0}–{Y1})",
+            "¿Cuál es la máxima media en Halloween (31/10)? ({Y0}–{Y1})"),
+    "d3": T("지난 10년, 밸런타인데이(2/14)에 비(1mm 이상)가 온 해는 몇 번일까?",
+            "In the last 10 years, how many Valentine's Days (Feb 14) got rain (≥1 mm)?",
+            "En los últimos 10 años, ¿cuántos San Valentín (14/2) llovió (≥1 mm)?"),
+}
+
+
+def set_text(q, place, country, unit):
+    """문항 id 에 맞는 QTEXT 를 지역 · 나라 이름으로 채운다. 지역 한정 문항(lc)은 그대로 둔다."""
+    key = q.get("tkey", q["id"])
+    if key not in QTEXT:
+        return
+    cn = {"US": T("미국", "the U.S.", "EE. UU."), "KR": T("한국", "South Korea", "Corea del Sur")}[country]
+    warm = "77°F" if unit == "F" else "25°C"
+    q["text"] = {lang: QTEXT[key][lang].format(c=(place or {}).get(lang, ""), country=cn[lang], warm=warm,
+                                               Y0=Y0, Y1=Y1, NEXT=NEXT)
+                 for lang in ("ko", "en", "es")}
+
+
 def main() -> None:
     regions, packs, months = [], {}, {}
     for rid, country, lat, lon, names in REGIONS:
@@ -676,6 +880,14 @@ def main() -> None:
         for k, qs in th.items():
             th[k] = [q for q in qs if q][:3]
             assert len(th[k]) == 3, f"{rid}/{k}: 문항이 {len(th[k])}개"
+            for q in th[k]:
+                set_text(q, nm, country, unit)
+        if rid in LOCAL:                         # 그 지역다운 문항 하나로 바꾼다
+            tk, qid, kind = LOCAL[rid]
+            lq = local_question(kind, W, nm, unit)
+            lq["local"] = True
+            th[tk] = [lq if q["id"] == qid else q for q in th[tk]]
+            assert any(q.get("local") for q in th[tk]), f"{rid}: {qid} 가 {tk} 에 없습니다"
         packs[rid] = th
         months[rid] = {m: {"rain": round(rain_m[m], 1), "clear": round(clear_m[m], 1)}
                        for m in range(1, 13)}
@@ -686,6 +898,8 @@ def main() -> None:
     for country in COUNTRY:
         rid = f"{country.lower()}-other"
         packs[rid] = {"holiday": holiday_theme(country, None)}
+        for q in packs[rid]["holiday"]:
+            set_text(q, None, country, "F" if country == "US" else "C")
         regions.append({"id": rid, "country": country, "other": True,
                         "name": T("기타 지역", "Other area", "Otra zona"),
                         "unit": "F" if country == "US" else "C"})

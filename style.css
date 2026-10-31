@@ -452,8 +452,79 @@ details[open] summary::before { transform: rotate(90deg); }
   to { transform: translate(var(--dx), var(--dy)) rotate(var(--r)); opacity: 0; }
 }
 
+/* ════════ 트렌디 레이어 — 흐르는 띠 · 스티커 · 움직이는 색 덩어리 ════════ */
+
+/* 뒤에서 천천히 떠다니는 색 덩어리 (글자 뒤에 깔리므로 아주 옅게) */
+.blobs { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.blobs i {
+  position: absolute; width: 320px; height: 320px; border-radius: 50%;
+  filter: blur(60px); opacity: .35;
+  animation: float 18s ease-in-out infinite alternate;
+}
+.blobs i:nth-child(1) { background: var(--t-holiday); top: -80px; left: -90px; }
+.blobs i:nth-child(2) { background: var(--t-rainy); top: 30%; right: -120px; animation-delay: -6s; }
+.blobs i:nth-child(3) { background: var(--t-sunny); bottom: -100px; left: 10%; animation-delay: -12s; }
+@keyframes float { to { transform: translate(60px, 80px) scale(1.15); } }
+
+/* 위쪽 흐르는 띠 */
+.marquee {
+  position: sticky; top: 60px; z-index: 4; overflow: hidden; white-space: nowrap;
+  background: var(--ink); color: var(--sun); border-block: 2px solid var(--ink);
+  font: 600 13px/32px var(--font-display); letter-spacing: .4px;
+  transform: rotate(-1deg); margin: 0 -6px;
+}
+.marquee span { display: inline-block; padding-right: 0; animation: ticker 28s linear infinite; }
+@keyframes ticker { to { transform: translateX(-100%); } }
+
+/* 제목 — 형광펜 밑줄 */
+h1 span {
+  background: linear-gradient(transparent 60%, var(--sun) 60%, var(--sun) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding: 0 2px;
+}
+
+/* 스티커 — 살짝 기울어진 채 하나씩 붙는다 */
+.stickers { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.sticker {
+  display: inline-flex; align-items: center; min-height: 32px; padding: 0 11px;
+  font: 700 13px var(--font-body); border: 2px solid var(--ink); border-radius: 999px;
+  box-shadow: var(--shadow-sm); background: var(--card);
+  animation: stick .5s var(--back) backwards;
+}
+.sticker.k1 { background: var(--sun); transform: rotate(-3deg); animation-delay: .5s; }
+.sticker.k2 { background: var(--primary); color: var(--on-primary); transform: rotate(2deg); animation-delay: .65s; }
+.sticker.k3 { background: var(--t-rainy); transform: rotate(-1.5deg); animation-delay: .8s; }
+@keyframes stick { from { opacity: 0; transform: scale(1.6) rotate(-12deg); } }
+
+/* 지역 한정 표시 — 테마 카드 스티커 · 문항 위 배지 */
+.tlocal {
+  position: absolute; top: 6px; right: 6px; padding: 2px 8px; border-radius: 999px;
+  font: 700 12px var(--font-display); background: var(--ink); color: var(--sun);
+  transform: rotate(4deg); animation: wiggle 2.6s ease-in-out infinite;
+}
+@keyframes wiggle { 0%, 80%, 100% { transform: rotate(4deg); } 88% { transform: rotate(-6deg); } 94% { transform: rotate(8deg); } }
+.local-badge {
+  display: inline-block; margin: 2px 0 0; padding: 4px 12px; border-radius: 999px;
+  background: var(--ink); color: var(--sun); font: 700 13px var(--font-body);
+  transform: rotate(-1.5deg); animation: stick .45s var(--back);
+}
+
+/* 결과 폴라로이드 위 꼬리표 */
+.polaroid { position: relative; }
+.ptag {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%) rotate(-3deg);
+  background: var(--primary); color: var(--on-primary); border: 2px solid var(--ink);
+  font: 700 12px var(--font-display); letter-spacing: 1.5px; padding: 3px 12px; border-radius: 6px;
+  white-space: nowrap; z-index: 1;
+}
+
+/* 주 버튼 — 화살표가 살짝 밀린다 */
+.primary:not(:disabled)::after { content: " →"; display: inline-block; transition: transform var(--fast) var(--out); }
+.primary:not(:disabled):hover::after { transform: translateX(4px); }
+
 /* 움직임을 줄이도록 설정한 사람에게는 모든 움직임을 끄고 마지막 모습만 보여 준다 */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .confetti { display: none; }
+  .marquee span { transform: none; }
 }
