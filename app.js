@@ -72,6 +72,7 @@ const I18N = {
     shared: (p, t) => `친구가 ${t}에서 ${p}! 당신은요?`,
     calTitle: "📸 PHOTO DAY — 사진 찍는 날",
     seasons: { spring: "봄", summer: "여름", fall: "가을", winter: "겨울" },
+    ox: { O: "⭕ 맞다", X: "❌ 아니다" },
     personas: [
       ["🌈", "즉흥 사진가"],
       ["☂️", "우산 챙기는 타입"],
@@ -131,6 +132,7 @@ const I18N = {
     shared: (p, t) => `Your friend is a ${p} on ${t}. Your turn!`,
     calTitle: "📸 PHOTO DAY",
     seasons: { spring: "Spring", summer: "Summer", fall: "Fall", winter: "Winter" },
+    ox: { O: "⭕ True", X: "❌ False" },
     personas: [
       ["🌈", "Spontaneous Snapper"],
       ["☂️", "Umbrella Packer"],
@@ -190,6 +192,7 @@ const I18N = {
     shared: (p, t) => `Tu amigo es ${p} en ${t}. ¡Te toca!`,
     calTitle: "📸 PHOTO DAY",
     seasons: { spring: "Primavera", summer: "Verano", fall: "Otoño", winter: "Invierno" },
+    ox: { O: "⭕ Verdadero", X: "❌ Falso" },
     personas: [
       ["🌈", "Espíritu espontáneo"],
       ["☂️", "Siempre con paraguas"],
@@ -270,6 +273,11 @@ function timeName(s) {
     .format(new Date(2000, 0, 1, h, m));
 }
 function optLabel(q, o) {
+  if (q.kind === "vs") {
+    const r = D.regions.find((x) => x.id === o);
+    return `${FLAG[r.country]} ${tr(r.name)}`;
+  }
+  if (q.kind === "ox") return L().ox[o];
   if (q.kind === "month") return monthName(o);
   if (q.kind === "season") return L().seasons[o];
   if (q.kind === "time") return timeName(o);
@@ -403,11 +411,16 @@ function renderQ(revealed) {
   $("q-local").hidden = !q.local;
   if (q.local) $("q-local").textContent = L().localBadge(tr(REGION.name));
   $("q-options").innerHTML = "";
+  $("q-options").className = `choices k-${q.kind}`;
   q.options.forEach((o) => {
     const b = document.createElement("button");
     b.className = "choice";
     b.type = "button";
     b.textContent = optLabel(q, o);
+    if (q.kind === "vs") {                   // VS 카드는 국기를 크게
+      const r = D.regions.find((x) => x.id === o);
+      b.innerHTML = `<span class="vflag" aria-hidden="true">${FLAG[r.country]}</span><span>${tr(r.name)}</span>`;
+    }
     b.dataset.v = String(o);
     b.onclick = () => answer(o, b);
     $("q-options").appendChild(b);

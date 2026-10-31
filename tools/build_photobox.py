@@ -629,17 +629,17 @@ def special_theme(W, unit):
 
 THEMES = [
     ("rainy", "☔", T("RAINY DAY", "RAINY DAY", "DÍA DE LLUVIA"),
-     T("비 오는 날에 관한 호기심", "Curious facts about rainy days", "Curiosidades de los días de lluvia")),
+     T("동네 날씨 탐정 · 비 오는 날의 비밀", "Local Weather Detective", "Detective del clima local")),
     ("sunny", "☀️", T("SUNNY SEASON", "SUNNY SEASON", "TEMPORADA DE SOL"),
-     T("맑고 따뜻한 날씨에 관한 호기심", "Clear skies and warm days", "Cielos despejados y días cálidos")),
+     T("주말 플래너 · 나가 놀기 좋은 날", "Weekend Planner", "Planificador de finde")),
     ("holiday", "🎉", T("HOLIDAY MOOD", "HOLIDAY MOOD", "MODO FERIADO"),
-     T("연휴와 특별한 날에 관한 호기심", "Long weekends and days off", "Puentes y días libres")),
+     T("연휴 레이더 · 쉬는 날 날씨 체크", "Holiday Radar", "Radar de feriados")),
     ("golden", "🌅", T("GOLDEN HOUR", "GOLDEN HOUR", "HORA DORADA"),
-     T("해 지는 시간에 관한 호기심", "When the sun goes down", "Cuándo se pone el sol")),
+     T("시즌 헌터 · 노을 사진 타이밍", "Season Hunter: sunset timing", "Cazador de atardeceres")),
     ("cozy", "🧣", T("COZY SEASON", "COZY SEASON", "TEMPORADA ACOGEDORA"),
-     T("추운 날에 관한 호기심", "Curious facts about cold days", "Curiosidades de los días fríos")),
+     T("실내 데이트 코치 · 추운 날 플랜 B", "Cozy Date Coach", "Coach de citas bajo techo")),
     ("special", "💝", T("SPECIAL DAYS", "SPECIAL DAYS", "DÍAS ESPECIALES"),
-     T("기념일 날씨에 관한 호기심", "Weather on the days that matter", "El clima en los días especiales")),
+     T("기념일 체커 · 그날 날씨는?", "Special-Day Checker", "Revisor de fechas especiales")),
 ]
 
 CAVEAT_W = T(
@@ -670,21 +670,21 @@ CAVEAT_H = {
 #   (테마, 바꿀 문항, 종류)
 # ════════════════════════════════════════════════════════════════
 LOCAL = {
-    "la":         ("rainy", "r3", "rain_days"),       # '남캘리포니아엔 비가 안 온다'
-    "pleasanton": ("rainy", "r3", "summer_rain"),     # 베이 지역의 마른 여름
-    "milpitas":   ("rainy", "r3", "summer_rain"),
-    "honolulu":   ("golden", "g2", "sunset_span"),    # 하와이는 서머타임이 없다 (g1 늦은 일몰과 이어서 묻는다)
+    "la":         ("rainy", "r3x", "rain_days"),       # '남캘리포니아엔 비가 안 온다'
+    "pleasanton": ("rainy", "r3x", "summer_rain"),     # 베이 지역의 마른 여름
+    "milpitas":   ("rainy", "r3x", "summer_rain"),
+    "honolulu":   ("golden", "g3x", "sunset_span"),    # 하와이는 서머타임이 없다 (g1 늦은 일몰과 이어서 묻는다)
     "carrollton": ("sunny", "s2", "hot100"),          # 텍사스의 100°F
     "frisco":     ("sunny", "s2", "hot100"),
-    "annarbor":   ("cozy", "c3", "freeze"),           # 미시간의 얼어붙는 밤
+    "annarbor":   ("cozy", "c2", "freeze"),           # 미시간의 얼어붙는 밤
     "seoul":      ("sunny", "s2", "tropical"),        # 서울 열대야
-    "busan":      ("cozy", "c3", "freeze"),           # 따뜻한 부산의 겨울
-    "incheon":    ("rainy", "r3", "downpour"),
+    "busan":      ("cozy", "c2", "freeze"),           # 따뜻한 부산의 겨울
+    "incheon":    ("rainy", "r3x", "downpour"),
     "daegu":      ("sunny", "s2", "heatwave"),        # 대프리카
-    "daejeon":    ("cozy", "c3", "swing"),            # 분지의 큰 일교차
+    "daejeon":    ("cozy", "c2", "swing"),            # 분지의 큰 일교차
     "gwangju":    ("sunny", "s2", "heatwave"),
-    "ulsan":      ("rainy", "r3", "downpour"),
-    "jeju":       ("rainy", "r3", "rain_days"),       # 비 많은 섬
+    "ulsan":      ("rainy", "r3x", "downpour"),
+    "jeju":       ("rainy", "r3x", "rain_days"),       # 비 많은 섬
 }
 
 
@@ -866,12 +866,204 @@ def set_text(q, place, country, unit):
                  for lang in ("ko", "en", "es")}
 
 
+# ════════════════════════════════════════════════════════════════
+# YOUR CITY, YOUR VIBE — 숫자 맞히기만 있으면 지루하다.
+# VS 대결 · O/X · 상황극을 섞는다. 모두 지난 10년 기록으로 계산하고, 예보처럼 묻지 않는다.
+# ════════════════════════════════════════════════════════════════
+# VS 대결 상대 — 미국 매장 지역은 서울이나 LA, 한국 도시는 서울(서울은 LA)과 겨룬다
+RIVAL = {"la": "seoul", "pleasanton": "la", "milpitas": "la", "honolulu": "seoul",
+         "carrollton": "la", "frisco": "la", "annarbor": "seoul",
+         "seoul": "la", "busan": "seoul", "incheon": "seoul", "daegu": "seoul",
+         "daejeon": "seoul", "gwangju": "seoul", "ulsan": "busan", "jeju": "seoul"}
+OX = ["O", "X"]
+
+
+def eun(word):
+    """받침이 있으면 '은', 없으면 '는' (서울은 · 호놀룰루는)."""
+    c = word.strip()[-1]
+    if "가" <= c <= "힣":
+        return "은" if (ord(c) - 0xAC00) % 28 else "는"
+    return "는"
+
+
+def metrics(W):
+    """VS 대결에 쓰는 지역별 값."""
+    wk = [x for x in W if x["d"].weekday() >= 5]
+    lo = defaultdict(list)
+    for x in W:
+        lo[x["d"].month].append(x["lo"])
+    W25 = [x for x in W if x["d"].year == Y1]
+    late = max(W25, key=lambda x: mins(x["sunset"]))
+    return {"wk_rain": sum(1 for x in wk if x["rain"] >= RAIN_MM) / YEARS,
+            "late": mins(late["sunset"]),
+            "cold": min(sum(v) / len(v) for v in lo.values())}
+
+
+def q_vs(qid, text, me, rival, mv, rv, more, basis, why):
+    """두 지역 중 값이 큰(more=True) / 작은 쪽."""
+    ans = me if (mv > rv) == more else rival
+    return {"id": qid, "kind": "vs", "text": text, "options": [me, rival], "answer": ans,
+            "basis": basis, "why": why}
+
+
+def q_ox(qid, text, truth, basis, why):
+    return {"id": qid, "kind": "ox", "text": text, "options": OX, "answer": "O" if truth else "X",
+            "basis": basis, "why": why}
+
+
+def fun_questions(rid, W, nm, unit, country, M, NAMES):
+    """테마마다 새 모양 문항. 돌려주는 dict 의 키 = 문항 id."""
+    rv, rn = RIVAL[rid], NAMES[RIVAL[rid]]
+    me, them = M[rid], M[rv]
+    u = "°F" if unit == "F" else "°C"
+    out = {}
+
+    # ☔ 동네 날씨 탐정
+    out["r1v"] = q_vs("r1v",
+        T(f"VS 대결! {nm['ko']} vs {rn['ko']}, 우산이 필요한 주말(토·일, 비 1mm 이상)이 더 많은 곳은?",
+          f"VS! {nm['en']} vs {rn['en']}: which gets more umbrella weekends (Sat/Sun, ≥1 mm)?",
+          f"¡VS! {nm['es']} vs {rn['es']}: ¿dónde hay más findes de paraguas (sáb/dom, ≥1 mm)?"),
+        rid, rv, me["wk_rain"], them["wk_rain"], True,
+        T(f"{Y0}~{Y1}년 평균, 비 온 토·일: {nm['ko']} {me['wk_rain']:.1f}일 · {rn['ko']} {them['wk_rain']:.1f}일",
+          f"Rainy Sat/Sun per year, {Y0}–{Y1}: {nm['en']} {me['wk_rain']:.1f} · {rn['en']} {them['wk_rain']:.1f}",
+          f"Sáb/dom con lluvia al año, {Y0}–{Y1}: {nm['es']} {me['wk_rain']:.1f} · {rn['es']} {them['wk_rain']:.1f}"),
+        T("탐정의 결론: 우리 동네 주말 날씨, 이제 감이 오죠? 🕵️", "Detective's verdict: now you know your weekend weather 🕵️",
+          "Veredicto del detective: ya conoces el clima de tu finde 🕵️"))
+    seas = defaultdict(float)
+    for x in W:
+        seas[SEASON[x["d"].month]] += x["rain"] / YEARS
+    out["r3x"] = q_ox("r3x",
+        T(f"O/X! {nm['ko']}{eun(nm['ko'])} 겨울(12~2월)보다 여름(6~8월)에 비가 더 많이 온다?",
+          f"True or false? {nm['en']} gets more rain in summer (Jun–Aug) than in winter (Dec–Feb).",
+          f"¿Verdadero o falso? En {nm['es']} llueve más en verano (jun–ago) que en invierno (dic–feb)."),
+        seas["summer"] > seas["winter"],
+        T(f"{Y0}~{Y1}년 계절 강수량 평균: 여름 {seas['summer']:.0f}mm · 겨울 {seas['winter']:.0f}mm",
+          f"Average seasonal rain, {Y0}–{Y1}: summer {seas['summer']:.0f} mm · winter {seas['winter']:.0f} mm",
+          f"Lluvia media por estación, {Y0}–{Y1}: verano {seas['summer']:.0f} mm · invierno {seas['winter']:.0f} mm"),
+        T("비 오는 계절을 알면 실내 데이트 날을 미리 잡을 수 있어요 ☔", "Know the rainy season, plan the indoor dates ☔",
+          "Conoce la temporada de lluvias y planea citas bajo techo ☔"))
+
+    # ☀️ 주말 플래너 — 12월 야외 촬영 약속
+    dec = [x for x in W if x["d"].month == 12 and x["d"].weekday() >= 5]
+    dry = sum(1 for x in dec if x["rain"] < RAIN_MM) / len(dec) * 100
+    out["s3s"] = q_num("s3s",
+        T(f"12월 토요일, 친구랑 {nm['ko']}에서 야외 촬영 약속! 지난 10년 12월 주말 중 비(1mm 이상)가 안 온 날은 몇 %일까?",
+          f"December Saturday photo shoot with friends in {nm['en']}! Over the last 10 years, what % of December weekend days stayed dry (<1 mm)?",
+          f"¡Sesión de fotos un sábado de diciembre en {nm['es']}! En los últimos 10 años, ¿qué % de días de finde de diciembre no llovió (<1 mm)?"),
+        dry, T("%", "%", "%"), 10,
+        T(f"{Y0}~{Y1}년 12월 토·일 {len(dec)}일 중 강수 1mm 미만인 날 {dry:.0f}%",
+          f"December Sat/Sun, {Y0}–{Y1}: {dry:.0f}% of {len(dec)} days had <1 mm",
+          f"Sáb/dom de diciembre, {Y0}–{Y1}: {dry:.0f}% de {len(dec)} días con <1 mm"),
+        T("야외 촬영이 어려운 날엔 부스에서 한 컷 📸", "If the shoot gets rained out, the booth has you 📸",
+          "Si llueve, la cabina te salva la sesión 📸"), lo=0, hi=100)
+
+    # 🎉 연휴 레이더
+    by_d = {x["d"]: x for x in W}
+    if country == "US":
+        def day(y):                                  # 추수감사절 = 11월 넷째 목요일
+            d = dt.date(y, 11, 1)
+            d += dt.timedelta(days=(3 - d.weekday()) % 7)
+            return d + dt.timedelta(weeks=3)
+        name = T("추수감사절", "Thanksgiving", "Acción de Gracias")
+        why = T("가족 모임 날, 비 오면 실내에서 단체 사진 🦃", "Family day — rain means a group shot indoors 🦃",
+                "Día en familia: si llueve, foto grupal bajo techo 🦃")
+    else:
+        def day(y):
+            return dt.date(y, 5, 5)
+        name = T("어린이날(5/5)", "Children's Day (May 5)", "Día del Niño (5 de mayo)")
+        why = T("가족 나들이 날, 비 오면 실내에서 가족 네컷 👨‍👩‍👧", "Family outing day — rain means a family strip indoors 👨‍👩‍👧",
+                "Día de paseo en familia: si llueve, fotos bajo techo 👨‍👩‍👧")
+    wet = [y for y in range(Y0, Y1 + 1) if by_d[day(y)]["rain"] >= RAIN_MM]
+    out["h2s"] = q_num("h2s",
+        T(f"{name['ko']} 가족 나들이 계획! 지난 10년({Y0}~{Y1}) {name['ko']}에 비(1mm 이상)가 온 해는 몇 번일까?",
+          f"Planning a {name['en']} outing! In the last 10 years ({Y0}–{Y1}), how many times did it rain (≥1 mm) on {name['en']}?",
+          f"¡Plan para {name['es']}! En los últimos 10 años ({Y0}–{Y1}), ¿cuántas veces llovió (≥1 mm) ese día?"),
+        len(wet), T("번 (10년 중)", " of 10 years", " de 10 años"), 2,
+        T(f"비 온 해: {', '.join(map(str, wet)) or '없음'}", f"Rainy years: {', '.join(map(str, wet)) or 'none'}",
+          f"Años con lluvia: {', '.join(map(str, wet)) or 'ninguno'}"),
+        why, lo=0, hi=10)
+    lw_rain = 0
+    for y in range(Y0, Y1 + 1):
+        lw = {d for r in long_weekends(country, y) for d in r}
+        lw_rain += sum(1 for x in W if x["d"] in lw and x["rain"] >= RAIN_MM)
+    v = lw_rain / YEARS
+    out["h3x"] = q_ox("h3x",
+        T("O/X! 3일 이상 연휴 중 비(1mm 이상) 온 날은 1년에 일주일(7일)도 안 된다?",
+          "True or false? Rainy long-weekend days (≥1 mm) add up to less than a week (7 days) a year.",
+          "¿Verdadero o falso? Los días de puente con lluvia (≥1 mm) suman menos de una semana (7 días) al año."),
+        v < 7,
+        T(f"{Y0}~{Y1}년 평균 1년에 {v:.1f}일", f"{Y0}–{Y1} average: {v:.1f} days a year", f"Promedio {Y0}–{Y1}: {v:.1f} días al año"),
+        T("쉬는 날 비 오면? 그날이 바로 사진 찍는 날 📸", "Day off and raining? That's your photo day 📸",
+          "¿Día libre y llueve? Ese es tu día de fotos 📸"))
+
+    # 🌅 시즌 헌터
+    out["g2v"] = q_vs("g2v",
+        T(f"VS 대결! {nm['ko']} vs {rn['ko']}, 1년 중 해가 가장 늦게 지는 시각이 더 늦은 곳은? (현지 시간)",
+          f"VS! {nm['en']} vs {rn['en']}: whose latest sunset of the year is later? (local time)",
+          f"¡VS! {nm['es']} vs {rn['es']}: ¿dónde es más tardío el último atardecer del año? (hora local)"),
+        rid, rv, me["late"], them["late"], True,
+        T(f"{Y1}년 가장 늦은 일몰: {nm['ko']} {hhmm(me['late'])} · {rn['ko']} {hhmm(them['late'])}",
+          f"Latest {Y1} sunset: {nm['en']} {hhmm(me['late'])} · {rn['en']} {hhmm(them['late'])}",
+          f"Atardecer más tardío {Y1}: {nm['es']} {hhmm(me['late'])} · {rn['es']} {hhmm(them['late'])}"),
+        T("노을 사진은 일몰 한 시간 전부터가 골든아워 🌅", "Golden hour starts about an hour before sunset 🌅",
+          "La hora dorada empieza una hora antes del atardecer 🌅"))
+    W25 = [x for x in W if x["d"].year == Y1]
+    early = min(W25, key=lambda x: (mins(x["sunset"]), x["d"]))
+    near_solstice = dt.date(Y1, 12, 18) <= early["d"] <= dt.date(Y1, 12, 24)
+    out["g3x"] = q_ox("g3x",
+        T("O/X! 해가 가장 일찍 지는 날은 낮이 가장 짧은 동지(12월 21일 무렵)다?",
+          "True or false? The earliest sunset falls on the shortest day (around Dec 21).",
+          "¿Verdadero o falso? El atardecer más temprano cae en el día más corto (hacia el 21 de diciembre)."),
+        near_solstice,
+        T(f"{Y1}년 가장 이른 일몰은 {early['d']:%m월 %d일} 무렵 {early['sunset']}",
+          f"Earliest {Y1} sunset: around {early['d']:%b %d} at {early['sunset']}",
+          f"Atardecer más temprano de {Y1}: hacia el {early['d']:%d/%m} a las {early['sunset']}"),
+        T("가장 일찍 어두워지는 날은 동지보다 조금 앞서요. 저녁 약속은 실내로", "The earliest dark comes a bit before the solstice — go indoors",
+          "Oscurece más temprano antes del solsticio: planes bajo techo"))
+
+    # 🧣 실내 데이트 코치
+    out["c2v"] = q_vs("c2v",
+        T(f"VS 대결! {nm['ko']} vs {rn['ko']}, 가장 추운 달의 아침이 더 쌀쌀한 곳은?",
+          f"VS! {nm['en']} vs {rn['en']}: whose coldest month has chillier mornings?",
+          f"¡VS! {nm['es']} vs {rn['es']}: ¿dónde son más frías las mañanas del mes más frío?"),
+        rid, rv, me["cold"], them["cold"], False,
+        T(f"{Y0}~{Y1}년 가장 추운 달의 아침 최저기온 평균: {nm['ko']} {deg(me['cold'], unit):.0f}{u} · {rn['ko']} {deg(them['cold'], unit):.0f}{u}",
+          f"Avg. low in the coldest month, {Y0}–{Y1}: {nm['en']} {deg(me['cold'], unit):.0f}{u} · {rn['en']} {deg(them['cold'], unit):.0f}{u}",
+          f"Mínima media del mes más frío, {Y0}–{Y1}: {nm['es']} {deg(me['cold'], unit):.0f}{u} · {rn['es']} {deg(them['cold'], unit):.0f}{u}"),
+        T("추운 날의 플랜 B — 따뜻한 부스에서 둘이 한 컷 🧣", "Plan B for cold days: a warm booth for two 🧣",
+          "Plan B para días fríos: una cabina calentita para dos 🧣"))
+
+    # 💝 기념일 체커
+    val = sum(1 for y in range(Y0, Y1 + 1) if by_d[dt.date(y, 2, 14)]["rain"] >= RAIN_MM)
+    out["d3x"] = q_ox("d3x",
+        T("O/X! 지난 10년, 밸런타인데이(2/14)엔 비(1mm 이상)가 한 번도 안 왔다?",
+          "True or false? In the last 10 years, it never rained (≥1 mm) on Valentine's Day (Feb 14).",
+          "¿Verdadero o falso? En los últimos 10 años nunca llovió (≥1 mm) en San Valentín (14/2)."),
+        val == 0,
+        T(f"{Y0}~{Y1}년 2월 14일에 비 온 해: {val}번", f"Rainy Feb 14s, {Y0}–{Y1}: {val}", f"14 de febrero con lluvia, {Y0}–{Y1}: {val}"),
+        T("데이트 사진은 비가 와도 OK인 곳에서 💝", "Date photos? Pick a rain-proof spot 💝", "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"))
+    return out
+
+
+# 테마마다 문항 순서 — 모양이 겹치지 않게 섞는다
+ORDER = {"rainy": ["r1v", "r2", "r3x"], "sunny": ["s1", "s2", "s3s"],
+         "holiday": ["h1", "h2s", "h3x"], "golden": ["g1", "g2v", "g3x"],
+         "cozy": ["c1", "c2v", "c2"], "special": ["d3x", "d2", "d1"]}
+# 핼러윈 문항은 상황극 말투로
+QTEXT_D2 = T("핼러윈 코스튬, 반팔 OK? 핼러윈(10/31) 낮 최고기온은 평균 몇 도일까? ({Y0}~{Y1})",
+             "Halloween costume — T-shirt OK? What's the average high on Oct 31? ({Y0}–{Y1})",
+             "Disfraz de Halloween, ¿manga corta? ¿Cuál es la máxima media del 31/10? ({Y0}–{Y1})")
+
+
 def main() -> None:
     regions, packs, months = [], {}, {}
+    WEATHER = {rid: weather(rid, lat, lon) for rid, _, lat, lon, _ in REGIONS}
+    M = {rid: metrics(W) for rid, W in WEATHER.items()}
+    NAMES = {rid: dict(zip(("ko", "en", "es"), names)) for rid, *_, names in REGIONS}
     for rid, country, lat, lon, names in REGIONS:
         nm = dict(zip(("ko", "en", "es"), names))
         unit = "F" if country == "US" else "C"
-        W = weather(rid, lat, lon)
+        W = WEATHER[rid]
         rq, rain_m = rainy_theme(W, nm)
         sq, clear_m = sunny_theme(W, nm, unit)
         th = {"rainy": rq, "sunny": sq, "holiday": holiday_theme(country, W),
@@ -882,6 +1074,11 @@ def main() -> None:
             assert len(th[k]) == 3, f"{rid}/{k}: 문항이 {len(th[k])}개"
             for q in th[k]:
                 set_text(q, nm, country, unit)
+        # 새 모양 문항을 섞어 테마마다 3문항을 다시 짠다
+        pool = {q["id"]: q for qs in th.values() for q in qs}
+        pool.update(fun_questions(rid, W, nm, unit, country, M, NAMES))
+        pool["d2"]["text"] = {lang: QTEXT_D2[lang].format(Y0=Y0, Y1=Y1) for lang in ("ko", "en", "es")}
+        th = {k: [pool[i] for i in ids] for k, ids in ORDER.items()}
         if rid in LOCAL:                         # 그 지역다운 문항 하나로 바꾼다
             tk, qid, kind = LOCAL[rid]
             lq = local_question(kind, W, nm, unit)
