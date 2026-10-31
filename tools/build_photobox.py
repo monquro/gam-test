@@ -41,7 +41,7 @@ NEXT = 2027                    # 연휴 문항은 다가오는 해
 RAIN_MM = 1.0                  # 비 온 날 = 하루 강수량 1mm 이상
 CLEAR_CLOUD = 40               # 맑은 날 = 비 1mm 미만 + 하루 평균 구름양 40% 이하
 
-# 매장이 있는 지역만. 같은 도시의 매장은 날씨가 같으므로 한 지역으로 묶는다.
+# 미국은 매장이 있는 지역만, 한국은 광역시와 제주. 같은 도시의 매장은 날씨가 같으므로 한 지역으로 묶는다.
 REGIONS = [
     ("la", "US", 34.0617, -118.3005,
      ("LA 코리아타운", "Los Angeles (Koreatown)", "Los Ángeles (Koreatown)")),
@@ -59,6 +59,12 @@ REGIONS = [
      ("앤아버", "Ann Arbor, MI", "Ann Arbor, MI")),
     ("seoul", "KR", 37.5665, 126.9780, ("서울", "Seoul", "Seúl")),
     ("busan", "KR", 35.1796, 129.0756, ("부산", "Busan", "Busan")),
+    ("incheon", "KR", 37.4563, 126.7052, ("인천", "Incheon", "Incheon")),
+    ("daegu", "KR", 35.8714, 128.6014, ("대구", "Daegu", "Daegu")),
+    ("daejeon", "KR", 36.3504, 127.3845, ("대전", "Daejeon", "Daejeon")),
+    ("gwangju", "KR", 35.1595, 126.8526, ("광주", "Gwangju", "Gwangju")),
+    ("ulsan", "KR", 35.5384, 129.3114, ("울산", "Ulsan", "Ulsan")),
+    ("jeju", "KR", 33.4996, 126.5312, ("제주", "Jeju", "Jeju")),
 ]
 COUNTRY = {"US": ("미국", "United States", "Estados Unidos"),
            "KR": ("한국", "South Korea", "Corea del Sur")}

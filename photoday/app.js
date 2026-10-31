@@ -51,7 +51,8 @@ const I18N = {
     when: (m) => `${m} 한 달 동안`,
     stackable: "다른 할인과 중복 사용 가능",
     showCode: "매장에서 이 코드를 보여 주세요",
-    addCal: "캘린더에 추가",
+    gcal: "Google 캘린더에 추가",
+    addCal: "애플·기타 캘린더 (.ics)",
     share: "친구에게 보내기",
     copied: "링크를 복사했어요",
     sampleNote: "시제품용 샘플 쿠폰입니다. 실제 매장에서는 사용할 수 없어요.",
@@ -98,7 +99,8 @@ const I18N = {
     when: (m) => `Valid all of ${m}`,
     stackable: "Stackable with other offers",
     showCode: "Show this code in store",
-    addCal: "Add to calendar",
+    gcal: "Add to Google Calendar",
+    addCal: "Apple / other calendar (.ics)",
     share: "Send to a friend",
     copied: "Link copied",
     sampleNote: "Sample coupon for a prototype. Not valid in stores.",
@@ -145,7 +147,8 @@ const I18N = {
     when: (m) => `Válido todo ${m}`,
     stackable: "Acumulable con otras ofertas",
     showCode: "Muestra este código en la tienda",
-    addCal: "Agregar al calendario",
+    gcal: "Agregar a Google Calendar",
+    addCal: "Apple / otro calendario (.ics)",
     share: "Enviar a un amigo",
     copied: "Enlace copiado",
     sampleNote: "Cupón de muestra de un prototipo. No válido en tiendas.",
@@ -163,7 +166,8 @@ const I18N = {
 const LANGS = [["ko", "한국어"], ["en", "English"], ["es", "Español"]];
 const CODE = {
   la: "LAK", pleasanton: "PLS", milpitas: "MLP", honolulu: "HNL", carrollton: "CRT",
-  frisco: "FRS", annarbor: "ANA", seoul: "SEL", busan: "PUS", "us-other": "USA", "kr-other": "KOR",
+  frisco: "FRS", annarbor: "ANA", seoul: "SEL", busan: "PUS", incheon: "ICN", daegu: "TAE",
+  daejeon: "DJN", gwangju: "KWJ", ulsan: "USN", jeju: "CJU", "us-other": "USA", "kr-other": "KOR",
 };
 const FLAG = { US: "🇺🇸", KR: "🇰🇷" };
 const L = () => I18N[LANG];
@@ -434,13 +438,31 @@ function renderCoupon() {
   $("c-code").textContent = couponCode();
 }
 
-/* 캘린더 파일(.ics) — 날짜를 골랐으면 그날, 아니면 그 달 1일에 알림 */
-function addCalendar() {
+/* 약속 날짜 — 날짜를 골랐으면 그날, 아니면 그 달 1일. 하루 종일 일정으로 넣는다 */
+function eventDays() {
   const day = $("day").value || `${MONTH}-01`;
-  const d0 = day.replaceAll("-", "");
   const d1 = new Date(day + "T00:00:00");
   d1.setDate(d1.getDate() + 1);
   const end = `${d1.getFullYear()}${String(d1.getMonth() + 1).padStart(2, "0")}${String(d1.getDate()).padStart(2, "0")}`;
+  return [day.replaceAll("-", ""), end];
+}
+
+/* Google 캘린더 — 로그인한 사람의 캘린더에 일정 만들기 화면을 연다.
+   키도 서버도 필요 없고, 저장은 손님이 직접 누른다 */
+function addGoogle() {
+  const [d0, end] = eventDays();
+  const q = new URLSearchParams({
+    action: "TEMPLATE",
+    text: L().calTitle,
+    dates: `${d0}/${end}`,
+    details: `${tr(REGION.name)} · ${couponCode()} (SAMPLE)`,
+  });
+  window.open(`https://calendar.google.com/calendar/render?${q}`, "_blank", "noopener");
+}
+
+/* 캘린더 파일(.ics) — 애플 캘린더 · 아웃룩 등 */
+function addCalendar() {
+  const [d0, end] = eventDays();
   const ics = [
     "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//photo-day//EN", "BEGIN:VEVENT",
     `UID:${d0}-${couponCode()}@photo-day`,
@@ -484,6 +506,7 @@ async function boot() {
   $("btn-more").onclick = () => { renderThemes(); show("themes"); };
   $("btn-again").onclick = () => { renderThemes(); show("themes"); };
   $("btn-coupon").onclick = () => { renderCoupon(); show("coupon"); flash(); };
+  $("btn-gcal").onclick = addGoogle;
   $("btn-cal").onclick = addCalendar;
   $("btn-share").onclick = share;
 

@@ -108,6 +108,66 @@
    "unit": "C"
   },
   {
+   "id": "incheon",
+   "country": "KR",
+   "name": {
+    "ko": "인천",
+    "en": "Incheon",
+    "es": "Incheon"
+   },
+   "unit": "C"
+  },
+  {
+   "id": "daegu",
+   "country": "KR",
+   "name": {
+    "ko": "대구",
+    "en": "Daegu",
+    "es": "Daegu"
+   },
+   "unit": "C"
+  },
+  {
+   "id": "daejeon",
+   "country": "KR",
+   "name": {
+    "ko": "대전",
+    "en": "Daejeon",
+    "es": "Daejeon"
+   },
+   "unit": "C"
+  },
+  {
+   "id": "gwangju",
+   "country": "KR",
+   "name": {
+    "ko": "광주",
+    "en": "Gwangju",
+    "es": "Gwangju"
+   },
+   "unit": "C"
+  },
+  {
+   "id": "ulsan",
+   "country": "KR",
+   "name": {
+    "ko": "울산",
+    "en": "Ulsan",
+    "es": "Ulsan"
+   },
+   "unit": "C"
+  },
+  {
+   "id": "jeju",
+   "country": "KR",
+   "name": {
+    "ko": "제주",
+    "en": "Jeju",
+    "es": "Jeju"
+   },
+   "unit": "C"
+  },
+  {
    "id": "us-other",
    "country": "US",
    "other": true,
@@ -4852,6 +4912,3096 @@
     }
    ]
   },
+  "incheon": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "인천에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Incheon, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Incheon, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      17,
+      26,
+      35
+     ],
+     "answer": 26,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 25.7일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 25.7 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 25.7 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      1,
+      4,
+      7
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 0.7일 · 2월 1.2일 · 3월 1.9일 · 4월 1.9일 · 5월 2.5일 · 6월 1.7일 · 7월 5.0일 · 8월 3.7일 · 9월 2.0일 · 10월 1.9일 · 11월 1.2일 · 12월 2.0일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 0.7 · Feb 1.2 · Mar 1.9 · Apr 1.9 · May 2.5 · Jun 1.7 · Jul 5.0 · Aug 3.7 · Sep 2.0 · Oct 1.9 · Nov 1.2 · Dec 2.0",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 0.7 · 2: 1.2 · 3: 1.9 · 4: 1.9 · 5: 2.5 · 6: 1.7 · 7: 5.0 · 8: 3.7 · 9: 2.0 · 10: 1.9 · 11: 1.2 · 12: 2.0"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 195 · 여름 597 · 가을 264 · 겨울 67mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 195 · summer 597 · fall 264 · winter 67 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 195 · verano 597 · otoño 264 · invierno 67 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      1,
+      7,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 4.3일 · 2월 3.8일 · 3월 3.6일 · 4월 3.4일 · 5월 2.8일 · 6월 2.8일 · 7월 0.9일 · 8월 2.1일 · 9월 2.3일 · 10월 3.3일 · 11월 4.1일 · 12월 3.5일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 4.3 · Feb 3.8 · Mar 3.6 · Apr 3.4 · May 2.8 · Jun 2.8 · Jul 0.9 · Aug 2.1 · Sep 2.3 · Oct 3.3 · Nov 4.1 · Dec 3.5",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 4.3 · 2: 3.8 · 3: 3.6 · 4: 3.4 · 5: 2.8 · 6: 2.8 · 7: 0.9 · 8: 2.1 · 9: 2.3 · 10: 3.3 · 11: 4.1 · 12: 3.5"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      4,
+      8
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 3°C · 2월 5°C · 3월 11°C · 4월 17°C · 5월 21°C · 6월 26°C · 7월 29°C · 8월 30°C · 9월 26°C · 10월 20°C · 11월 14°C · 12월 4°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 3°C · Feb 5°C · Mar 11°C · Apr 17°C · May 21°C · Jun 26°C · Jul 29°C · Aug 30°C · Sep 26°C · Oct 20°C · Nov 14°C · Dec 4°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 3°C · 2: 5°C · 3: 11°C · 4: 17°C · 5: 21°C · 6: 26°C · 7: 29°C · 8: 30°C · 9: 26°C · 10: 20°C · 11: 14°C · 12: 4°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "인천에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Incheon get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Incheon al año?"
+     },
+     "options": [
+      24,
+      37,
+      50
+     ],
+     "answer": 37,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 36.9일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 36.9 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 36.9 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.9일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.9 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.9 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "인천에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Incheon, what's the latest sunset of the year?",
+      "es": "En Incheon, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:48",
+      "19:58",
+      "20:48"
+     ],
+     "answer": "19:58",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 26일 19:58",
+      "en": "Latest 2025 sunset (local time): Jun 26 at 19:58",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 26/06 a las 19:58"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:29",
+      "17:14",
+      "18:14"
+     ],
+     "answer": "17:14",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 12월 03일 무렵 17:14",
+      "en": "Earliest 2025 sunset (local time): around Dec 03 at 17:14",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 03/12 a las 17:14"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 5.2시간",
+      "en": "2025 daylight, longest minus shortest day: 5.2 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 5.2 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      8,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 -6°C · 2월 -4°C · 3월 2°C · 4월 8°C · 5월 13°C · 6월 19°C · 7월 24°C · 8월 24°C · 9월 19°C · 10월 11°C · 11월 4°C · 12월 -4°C",
+      "en": "Average daily low by month, 2016–2025: Jan -6°C · Feb -4°C · Mar 2°C · Apr 8°C · May 13°C · Jun 19°C · Jul 24°C · Aug 24°C · Sep 19°C · Oct 11°C · Nov 4°C · Dec -4°C",
+      "es": "Mínima media por mes, 2016–2025: 1: -6°C · 2: -4°C · 3: 2°C · 4: 8°C · 5: 13°C · 6: 19°C · 7: 24°C · 8: 24°C · 9: 19°C · 10: 11°C · 11: 4°C · 12: -4°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -23,
+      -17,
+      -11
+     ],
+     "answer": -17,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2023-01-25 -16.6°C",
+      "en": "Lowest daily low, 2016–2025: Jan 25, 2023 at -16.6°C",
+      "es": "Mínima más baja, 2016–2025: 25/01/2023 con -16.6°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      17,
+      27,
+      37
+     ],
+     "answer": 27,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 26.9°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 26.9°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 26.9°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      0,
+      2,
+      4
+     ],
+     "answer": 0,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 0번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 0 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 0 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      11,
+      17,
+      23
+     ],
+     "answer": 17,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 17.4°C",
+      "en": "Average Oct 31 high, 2016–2025: 17.4°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 17.4°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 1,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 1번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 1 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 1 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
+  "daegu": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "대구에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Daegu, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Daegu, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      17,
+      26,
+      35
+     ],
+     "answer": 26,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 25.7일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 25.7 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 25.7 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      1,
+      7,
+      10
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 0.7일 · 2월 1.5일 · 3월 2.2일 · 4월 1.9일 · 5월 2.3일 · 6월 2.4일 · 7월 3.7일 · 8월 3.1일 · 9월 3.6일 · 10월 2.1일 · 11월 1.4일 · 12월 0.8일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 0.7 · Feb 1.5 · Mar 2.2 · Apr 1.9 · May 2.3 · Jun 2.4 · Jul 3.7 · Aug 3.1 · Sep 3.6 · Oct 2.1 · Nov 1.4 · Dec 0.8",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 0.7 · 2: 1.5 · 3: 2.2 · 4: 1.9 · 5: 2.3 · 6: 2.4 · 7: 3.7 · 8: 3.1 · 9: 3.6 · 10: 2.1 · 11: 1.4 · 12: 0.8"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 223 · 여름 526 · 가을 316 · 겨울 81mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 223 · summer 526 · fall 316 · winter 81 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 223 · verano 526 · otoño 316 · invierno 81 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      1,
+      9,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 4.6일 · 2월 4.0일 · 3월 3.5일 · 4월 3.6일 · 5월 2.1일 · 6월 1.3일 · 7월 1.2일 · 8월 2.1일 · 9월 1.2일 · 10월 3.3일 · 11월 4.0일 · 12월 4.5일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 4.6 · Feb 4.0 · Mar 3.5 · Apr 3.6 · May 2.1 · Jun 1.3 · Jul 1.2 · Aug 2.1 · Sep 1.2 · Oct 3.3 · Nov 4.0 · Dec 4.5",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 4.6 · 2: 4.0 · 3: 3.5 · 4: 3.6 · 5: 2.1 · 6: 1.3 · 7: 1.2 · 8: 2.1 · 9: 1.2 · 10: 3.3 · 11: 4.0 · 12: 4.5"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      4,
+      8
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 8°C · 2월 10°C · 3월 16°C · 4월 22°C · 5월 26°C · 6월 30°C · 7월 31°C · 8월 33°C · 9월 27°C · 10월 22°C · 11월 17°C · 12월 8°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 8°C · Feb 10°C · Mar 16°C · Apr 22°C · May 26°C · Jun 30°C · Jul 31°C · Aug 33°C · Sep 27°C · Oct 22°C · Nov 17°C · Dec 8°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 8°C · 2: 10°C · 3: 16°C · 4: 22°C · 5: 26°C · 6: 30°C · 7: 31°C · 8: 33°C · 9: 27°C · 10: 22°C · 11: 17°C · 12: 8°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "대구에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Daegu get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Daegu al año?"
+     },
+     "options": [
+      23,
+      35,
+      47
+     ],
+     "answer": 35,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 35.4일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 35.4 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 35.4 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 4.7일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 4.7 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 4.7 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "대구에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Daegu, what's the latest sunset of the year?",
+      "es": "En Daegu, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:36",
+      "19:46",
+      "20:36"
+     ],
+     "answer": "19:46",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 27일 19:46",
+      "en": "Latest 2025 sunset (local time): Jun 27 at 19:46",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 27/06 a las 19:46"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:27",
+      "17:12",
+      "18:12"
+     ],
+     "answer": "17:12",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 11월 29일 무렵 17:12",
+      "en": "Earliest 2025 sunset (local time): around Nov 29 at 17:12",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 29/11 a las 17:12"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 4.8시간",
+      "en": "2025 daylight, longest minus shortest day: 4.8 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 4.8 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      8,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 -3°C · 2월 -1°C · 3월 4°C · 4월 9°C · 5월 14°C · 6월 19°C · 7월 24°C · 8월 24°C · 9월 19°C · 10월 11°C · 11월 4°C · 12월 -2°C",
+      "en": "Average daily low by month, 2016–2025: Jan -3°C · Feb -1°C · Mar 4°C · Apr 9°C · May 14°C · Jun 19°C · Jul 24°C · Aug 24°C · Sep 19°C · Oct 11°C · Nov 4°C · Dec -2°C",
+      "es": "Mínima media por mes, 2016–2025: 1: -3°C · 2: -1°C · 3: 4°C · 4: 9°C · 5: 14°C · 6: 19°C · 7: 24°C · 8: 24°C · 9: 19°C · 10: 11°C · 11: 4°C · 12: -2°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -20,
+      -14,
+      -8
+     ],
+     "answer": -14,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2023-01-25 -14.1°C",
+      "en": "Lowest daily low, 2016–2025: Jan 25, 2023 at -14.1°C",
+      "es": "Mínima más baja, 2016–2025: 25/01/2023 con -14.1°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      17,
+      25,
+      33
+     ],
+     "answer": 25,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 25.4°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 25.4°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 25.4°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      0,
+      2,
+      4
+     ],
+     "answer": 0,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 0번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 0 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 0 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      14,
+      20,
+      26
+     ],
+     "answer": 20,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 20.0°C",
+      "en": "Average Oct 31 high, 2016–2025: 20.0°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 20.0°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 1,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 1번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 1 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 1 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
+  "daejeon": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "대전에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Daejeon, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Daejeon, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      18,
+      27,
+      36
+     ],
+     "answer": 27,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 26.9일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 26.9 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 26.9 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      1,
+      4,
+      7
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 1.0일 · 2월 1.6일 · 3월 2.3일 · 4월 2.1일 · 5월 2.3일 · 6월 2.5일 · 7월 4.8일 · 8월 3.0일 · 9월 2.4일 · 10월 2.1일 · 11월 1.6일 · 12월 1.2일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 1.0 · Feb 1.6 · Mar 2.3 · Apr 2.1 · May 2.3 · Jun 2.5 · Jul 4.8 · Aug 3.0 · Sep 2.4 · Oct 2.1 · Nov 1.6 · Dec 1.2",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 1.0 · 2: 1.6 · 3: 2.3 · 4: 2.1 · 5: 2.3 · 6: 2.5 · 7: 4.8 · 8: 3.0 · 9: 2.4 · 10: 2.1 · 11: 1.6 · 12: 1.2"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 206 · 여름 536 · 가을 294 · 겨울 88mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 206 · summer 536 · fall 294 · winter 88 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 206 · verano 536 · otoño 294 · invierno 88 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      1,
+      7,
+      10
+     ],
+     "answer": 10,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 2.9일 · 2월 3.0일 · 3월 3.2일 · 4월 3.4일 · 5월 2.6일 · 6월 1.6일 · 7월 1.1일 · 8월 2.0일 · 9월 1.7일 · 10월 3.9일 · 11월 3.7일 · 12월 3.1일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 2.9 · Feb 3.0 · Mar 3.2 · Apr 3.4 · May 2.6 · Jun 1.6 · Jul 1.1 · Aug 2.0 · Sep 1.7 · Oct 3.9 · Nov 3.7 · Dec 3.1",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 2.9 · 2: 3.0 · 3: 3.2 · 4: 3.4 · 5: 2.6 · 6: 1.6 · 7: 1.1 · 8: 2.0 · 9: 1.7 · 10: 3.9 · 11: 3.7 · 12: 3.1"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      4,
+      8
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 6°C · 2월 8°C · 3월 15°C · 4월 21°C · 5월 25°C · 6월 29°C · 7월 31°C · 8월 32°C · 9월 28°C · 10월 22°C · 11월 16°C · 12월 6°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 6°C · Feb 8°C · Mar 15°C · Apr 21°C · May 25°C · Jun 29°C · Jul 31°C · Aug 32°C · Sep 28°C · Oct 22°C · Nov 16°C · Dec 6°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 6°C · 2: 8°C · 3: 15°C · 4: 21°C · 5: 25°C · 6: 29°C · 7: 31°C · 8: 32°C · 9: 28°C · 10: 22°C · 11: 16°C · 12: 6°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "대전에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Daejeon get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Daejeon al año?"
+     },
+     "options": [
+      21,
+      32,
+      43
+     ],
+     "answer": 32,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 32.2일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 32.2 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 32.2 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      4,
+      6,
+      8
+     ],
+     "answer": 6,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.5일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.5 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.5 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "대전에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Daejeon, what's the latest sunset of the year?",
+      "es": "En Daejeon, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:41",
+      "19:51",
+      "20:41"
+     ],
+     "answer": "19:51",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 23일 19:51",
+      "en": "Latest 2025 sunset (local time): Jun 23 at 19:51",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 23/06 a las 19:51"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:29",
+      "17:14",
+      "18:14"
+     ],
+     "answer": "17:14",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 12월 05일 무렵 17:14",
+      "en": "Earliest 2025 sunset (local time): around Dec 05 at 17:14",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 05/12 a las 17:14"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 4.9시간",
+      "en": "2025 daylight, longest minus shortest day: 4.9 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 4.9 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      8,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 -4°C · 2월 -2°C · 3월 3°C · 4월 9°C · 5월 14°C · 6월 19°C · 7월 24°C · 8월 24°C · 9월 19°C · 10월 11°C · 11월 4°C · 12월 -2°C",
+      "en": "Average daily low by month, 2016–2025: Jan -4°C · Feb -2°C · Mar 3°C · Apr 9°C · May 14°C · Jun 19°C · Jul 24°C · Aug 24°C · Sep 19°C · Oct 11°C · Nov 4°C · Dec -2°C",
+      "es": "Mínima media por mes, 2016–2025: 1: -4°C · 2: -2°C · 3: 3°C · 4: 9°C · 5: 14°C · 6: 19°C · 7: 24°C · 8: 24°C · 9: 19°C · 10: 11°C · 11: 4°C · 12: -2°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -24,
+      -18,
+      -12
+     ],
+     "answer": -18,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2021-01-08 -18.4°C",
+      "en": "Lowest daily low, 2016–2025: Jan 08, 2021 at -18.4°C",
+      "es": "Mínima más baja, 2016–2025: 08/01/2021 con -18.4°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      17,
+      27,
+      37
+     ],
+     "answer": 27,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 26.8°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 26.8°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 26.8°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      0,
+      2,
+      4
+     ],
+     "answer": 0,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 0번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 0 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 0 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      13,
+      19,
+      25
+     ],
+     "answer": 19,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 19.1°C",
+      "en": "Average Oct 31 high, 2016–2025: 19.1°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 19.1°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      0,
+      2,
+      4
+     ],
+     "answer": 2,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 2번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 2 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 2 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
+  "gwangju": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "광주에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Gwangju, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Gwangju, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      20,
+      31,
+      42
+     ],
+     "answer": 31,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 30.7일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 30.7 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 30.7 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      1,
+      3,
+      7
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 1.4일 · 2월 1.7일 · 3월 2.3일 · 4월 2.4일 · 5월 2.4일 · 6월 3.1일 · 7월 4.6일 · 8월 3.8일 · 9월 3.4일 · 10월 1.8일 · 11월 1.5일 · 12월 2.3일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 1.4 · Feb 1.7 · Mar 2.3 · Apr 2.4 · May 2.4 · Jun 3.1 · Jul 4.6 · Aug 3.8 · Sep 3.4 · Oct 1.8 · Nov 1.5 · Dec 2.3",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 1.4 · 2: 1.7 · 3: 2.3 · 4: 2.4 · 5: 2.4 · 6: 3.1 · 7: 4.6 · 8: 3.8 · 9: 3.4 · 10: 1.8 · 11: 1.5 · 12: 2.3"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 234 · 여름 587 · 가을 313 · 겨울 96mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 234 · summer 587 · fall 313 · winter 96 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 234 · verano 587 · otoño 313 · invierno 96 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      1,
+      7,
+      10
+     ],
+     "answer": 10,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 1.8일 · 2월 2.3일 · 3월 3.2일 · 4월 3.0일 · 5월 2.5일 · 6월 1.2일 · 7월 1.2일 · 8월 1.4일 · 9월 1.3일 · 10월 3.4일 · 11월 3.1일 · 12월 1.3일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 1.8 · Feb 2.3 · Mar 3.2 · Apr 3.0 · May 2.5 · Jun 1.2 · Jul 1.2 · Aug 1.4 · Sep 1.3 · Oct 3.4 · Nov 3.1 · Dec 1.3",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 1.8 · 2: 2.3 · 3: 3.2 · 4: 3.0 · 5: 2.5 · 6: 1.2 · 7: 1.2 · 8: 1.4 · 9: 1.3 · 10: 3.4 · 11: 3.1 · 12: 1.3"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      4,
+      8
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 7°C · 2월 9°C · 3월 14°C · 4월 20°C · 5월 24°C · 6월 28°C · 7월 30°C · 8월 32°C · 9월 28°C · 10월 22°C · 11월 17°C · 12월 8°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 7°C · Feb 9°C · Mar 14°C · Apr 20°C · May 24°C · Jun 28°C · Jul 30°C · Aug 32°C · Sep 28°C · Oct 22°C · Nov 17°C · Dec 8°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 7°C · 2: 9°C · 3: 14°C · 4: 20°C · 5: 24°C · 6: 28°C · 7: 30°C · 8: 32°C · 9: 28°C · 10: 22°C · 11: 17°C · 12: 8°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "광주에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Gwangju get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Gwangju al año?"
+     },
+     "options": [
+      17,
+      26,
+      35
+     ],
+     "answer": 26,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 25.7일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 25.7 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 25.7 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      4,
+      6,
+      8
+     ],
+     "answer": 6,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.6일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.6 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.6 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "광주에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Gwangju, what's the latest sunset of the year?",
+      "es": "En Gwangju, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:41",
+      "19:51",
+      "20:41"
+     ],
+     "answer": "19:51",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 22일 19:51",
+      "en": "Latest 2025 sunset (local time): Jun 22 at 19:51",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 22/06 a las 19:51"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:35",
+      "17:20",
+      "18:20"
+     ],
+     "answer": "17:20",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 11월 30일 무렵 17:20",
+      "en": "Earliest 2025 sunset (local time): around Nov 30 at 17:20",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 30/11 a las 17:20"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 4.8시간",
+      "en": "2025 daylight, longest minus shortest day: 4.8 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 4.8 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      8,
+      10
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 -2°C · 2월 -1°C · 3월 3°C · 4월 8°C · 5월 13°C · 6월 19°C · 7월 24°C · 8월 24°C · 9월 19°C · 10월 12°C · 11월 5°C · 12월 -1°C",
+      "en": "Average daily low by month, 2016–2025: Jan -2°C · Feb -1°C · Mar 3°C · Apr 8°C · May 13°C · Jun 19°C · Jul 24°C · Aug 24°C · Sep 19°C · Oct 12°C · Nov 5°C · Dec -1°C",
+      "es": "Mínima media por mes, 2016–2025: 1: -2°C · 2: -1°C · 3: 3°C · 4: 8°C · 5: 13°C · 6: 19°C · 7: 24°C · 8: 24°C · 9: 19°C · 10: 12°C · 11: 5°C · 12: -1°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -24,
+      -18,
+      -12
+     ],
+     "answer": -18,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2021-01-08 -18.3°C",
+      "en": "Lowest daily low, 2016–2025: Jan 08, 2021 at -18.3°C",
+      "es": "Mínima más baja, 2016–2025: 08/01/2021 con -18.3°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      16,
+      26,
+      36
+     ],
+     "answer": 26,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 25.5°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 25.5°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 25.5°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 1,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 1번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 1 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 1 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      14,
+      20,
+      26
+     ],
+     "answer": 20,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 19.6°C",
+      "en": "Average Oct 31 high, 2016–2025: 19.6°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 19.6°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 1,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 1번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 1 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 1 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
+  "ulsan": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "울산에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Ulsan, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Ulsan, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      19,
+      29,
+      39
+     ],
+     "answer": 29,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 29.0일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 29.0 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 29.0 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      4,
+      7,
+      12
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 1.2일 · 2월 2.0일 · 3월 2.5일 · 4월 2.1일 · 5월 2.6일 · 6월 2.8일 · 7월 3.9일 · 8월 3.6일 · 9월 3.8일 · 10월 2.0일 · 11월 1.5일 · 12월 1.0일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 1.2 · Feb 2.0 · Mar 2.5 · Apr 2.1 · May 2.6 · Jun 2.8 · Jul 3.9 · Aug 3.6 · Sep 3.8 · Oct 2.0 · Nov 1.5 · Dec 1.0",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 1.2 · 2: 2.0 · 3: 2.5 · 4: 2.1 · 5: 2.6 · 6: 2.8 · 7: 3.9 · 8: 3.6 · 9: 3.8 · 10: 2.0 · 11: 1.5 · 12: 1.0"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 262 · 여름 546 · 가을 389 · 겨울 107mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 262 · summer 546 · fall 389 · winter 107 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 262 · verano 546 · otoño 389 · invierno 107 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      7,
+      10,
+      12
+     ],
+     "answer": 12,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 4.8일 · 2월 4.2일 · 3월 3.2일 · 4월 3.3일 · 5월 2.0일 · 6월 1.8일 · 7월 1.2일 · 8월 2.1일 · 9월 1.3일 · 10월 2.9일 · 11월 3.8일 · 12월 5.0일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 4.8 · Feb 4.2 · Mar 3.2 · Apr 3.3 · May 2.0 · Jun 1.8 · Jul 1.2 · Aug 2.1 · Sep 1.3 · Oct 2.9 · Nov 3.8 · Dec 5.0",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 4.8 · 2: 4.2 · 3: 3.2 · 4: 3.3 · 5: 2.0 · 6: 1.8 · 7: 1.2 · 8: 2.1 · 9: 1.3 · 10: 2.9 · 11: 3.8 · 12: 5.0"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      4,
+      8
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 8°C · 2월 11°C · 3월 15°C · 4월 20°C · 5월 24°C · 6월 27°C · 7월 30°C · 8월 31°C · 9월 27°C · 10월 22°C · 11월 17°C · 12월 10°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 8°C · Feb 11°C · Mar 15°C · Apr 20°C · May 24°C · Jun 27°C · Jul 30°C · Aug 31°C · Sep 27°C · Oct 22°C · Nov 17°C · Dec 10°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 8°C · 2: 11°C · 3: 15°C · 4: 20°C · 5: 24°C · 6: 27°C · 7: 30°C · 8: 31°C · 9: 27°C · 10: 22°C · 11: 17°C · 12: 10°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "울산에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Ulsan get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Ulsan al año?"
+     },
+     "options": [
+      23,
+      36,
+      49
+     ],
+     "answer": 36,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 35.6일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 35.6 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 35.6 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 5.2일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 5.2 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 5.2 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "울산에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Ulsan, what's the latest sunset of the year?",
+      "es": "En Ulsan, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:32",
+      "19:42",
+      "20:32"
+     ],
+     "answer": "19:42",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 24일 19:42",
+      "en": "Latest 2025 sunset (local time): Jun 24 at 19:42",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 24/06 a las 19:42"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:24",
+      "17:09",
+      "18:09"
+     ],
+     "answer": "17:09",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 12월 04일 무렵 17:09",
+      "en": "Earliest 2025 sunset (local time): around Dec 04 at 17:09",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 04/12 a las 17:09"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      5,
+      7
+     ],
+     "answer": 5,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 4.8시간",
+      "en": "2025 daylight, longest minus shortest day: 4.8 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 4.8 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      5,
+      8
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 -1°C · 2월 1°C · 3월 5°C · 4월 10°C · 5월 14°C · 6월 20°C · 7월 24°C · 8월 25°C · 9월 21°C · 10월 15°C · 11월 7°C · 12월 1°C",
+      "en": "Average daily low by month, 2016–2025: Jan -1°C · Feb 1°C · Mar 5°C · Apr 10°C · May 14°C · Jun 20°C · Jul 24°C · Aug 25°C · Sep 21°C · Oct 15°C · Nov 7°C · Dec 1°C",
+      "es": "Mínima media por mes, 2016–2025: 1: -1°C · 2: 1°C · 3: 5°C · 4: 10°C · 5: 14°C · 6: 20°C · 7: 24°C · 8: 25°C · 9: 21°C · 10: 15°C · 11: 7°C · 12: 1°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -14,
+      -11,
+      -8
+     ],
+     "answer": -11,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2023-01-25 -11.2°C",
+      "en": "Lowest daily low, 2016–2025: Jan 25, 2023 at -11.2°C",
+      "es": "Mínima más baja, 2016–2025: 25/01/2023 con -11.2°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      15,
+      23,
+      31
+     ],
+     "answer": 23,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 22.8°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 22.8°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 22.8°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      0,
+      2,
+      4
+     ],
+     "answer": 0,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 0번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 0 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 0 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      14,
+      20,
+      26
+     ],
+     "answer": 20,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 19.9°C",
+      "en": "Average Oct 31 high, 2016–2025: 19.9°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 19.9°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 3,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 3번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 3 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 3 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
+  "jeju": {
+   "rainy": [
+    {
+     "id": "r1",
+     "kind": "num",
+     "text": {
+      "ko": "제주에서 비 오는 주말(토·일)은 1년에 며칠쯤일까?",
+      "en": "In Jeju, how many weekend days (Sat/Sun) a year get rain?",
+      "es": "En Jeju, ¿cuántos días de fin de semana al año llueve?"
+     },
+     "options": [
+      26,
+      40,
+      54
+     ],
+     "answer": 40,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 토·일 중 하루 강수량 1mm 이상인 날을 세어 평균하면 1년에 40.1일",
+      "en": "Sat/Sun with ≥1 mm of rain, 2016–2025: 40.1 days a year on average",
+      "es": "Sáb/dom con ≥1 mm de lluvia, 2016–2025: 40.1 días al año en promedio"
+     },
+     "why": {
+      "ko": "주말 약속이 비에 막히는 날이 1년에 이만큼. 그날의 플랜 B는 실내 📸",
+      "en": "That's how many weekend plans the rain can crash. Plan B: indoors 📸",
+      "es": "Esos son los findes que la lluvia puede arruinar. Plan B: bajo techo 📸"
+     }
+    },
+    {
+     "id": "r2",
+     "kind": "month",
+     "text": {
+      "ko": "비 오는 주말이 가장 많은 달은?",
+      "en": "Which month has the most rainy weekend days?",
+      "es": "¿Qué mes tiene más días de fin de semana lluviosos?"
+     },
+     "options": [
+      3,
+      7,
+      11
+     ],
+     "answer": 7,
+     "basis": {
+      "ko": "2016~2025년 달마다 비 온 토·일을 세어 해마다 평균: 1월 2.7일 · 2월 2.6일 · 3월 3.0일 · 4월 2.3일 · 5월 3.4일 · 6월 3.8일 · 7월 5.6일 · 8월 4.3일 · 9월 4.7일 · 10월 2.6일 · 11월 2.0일 · 12월 3.1일",
+      "en": "Rainy Sat/Sun per month, 2016–2025 average: Jan 2.7 · Feb 2.6 · Mar 3.0 · Apr 2.3 · May 3.4 · Jun 3.8 · Jul 5.6 · Aug 4.3 · Sep 4.7 · Oct 2.6 · Nov 2.0 · Dec 3.1",
+      "es": "Sáb/dom lluviosos por mes, promedio 2016–2025: 1: 2.7 · 2: 2.6 · 3: 3.0 · 4: 2.3 · 5: 3.4 · 6: 3.8 · 7: 5.6 · 8: 4.3 · 9: 4.7 · 10: 2.6 · 11: 2.0 · 12: 3.1"
+     },
+     "why": {
+      "ko": "그 달엔 실내 데이트 코스를 미리 찜해 두세요",
+      "en": "Save an indoor date idea for that month",
+      "es": "Guarda un plan bajo techo para ese mes"
+     }
+    },
+    {
+     "id": "r3",
+     "kind": "season",
+     "text": {
+      "ko": "비가 가장 많이 내리는 계절은?",
+      "en": "Which season gets the most rain?",
+      "es": "¿Qué estación tiene más lluvia?"
+     },
+     "options": [
+      "spring",
+      "summer",
+      "fall",
+      "winter"
+     ],
+     "answer": "summer",
+     "basis": {
+      "ko": "2016~2025년 계절별 강수량 합계의 연평균: 봄 345 · 여름 621 · 가을 460 · 겨울 167mm (봄 3~5월 · 여름 6~8월 · 가을 9~11월 · 겨울 12~2월)",
+      "en": "Average seasonal rain, 2016–2025: spring 345 · summer 621 · fall 460 · winter 167 mm (Mar–May / Jun–Aug / Sep–Nov / Dec–Feb)",
+      "es": "Lluvia media por estación, 2016–2025: primavera 345 · verano 621 · otoño 460 · invierno 167 mm (mar–may / jun–ago / sep–nov / dic–feb)"
+     },
+     "why": {
+      "ko": "비가 몰리는 계절엔 우산 대신 사진 한 장 ☔",
+      "en": "Rainy season? Trade the umbrella for a photo ☔",
+      "es": "¿Temporada de lluvias? Cambia el paraguas por una foto ☔"
+     }
+    }
+   ],
+   "sunny": [
+    {
+     "id": "s1",
+     "kind": "month",
+     "text": {
+      "ko": "맑은 주말이 가장 많은 달은?",
+      "en": "Which month has the most clear weekend days?",
+      "es": "¿Qué mes tiene más fines de semana despejados?"
+     },
+     "options": [
+      5,
+      7,
+      10
+     ],
+     "answer": 10,
+     "basis": {
+      "ko": "맑은 날 = 강수 1mm 미만 + 하루 평균 구름양 40% 이하. 2016~2025년 달마다 맑은 토·일 평균: 1월 1.3일 · 2월 2.1일 · 3월 2.6일 · 4월 3.0일 · 5월 1.4일 · 6월 0.9일 · 7월 0.8일 · 8월 1.8일 · 9월 1.2일 · 10월 3.3일 · 11월 3.0일 · 12월 0.9일",
+      "en": "Clear = <1 mm rain and ≤40% average cloud cover. Clear Sat/Sun per month, 2016–2025: Jan 1.3 · Feb 2.1 · Mar 2.6 · Apr 3.0 · May 1.4 · Jun 0.9 · Jul 0.8 · Aug 1.8 · Sep 1.2 · Oct 3.3 · Nov 3.0 · Dec 0.9",
+      "es": "Despejado = <1 mm de lluvia y ≤40% de nubes. Sáb/dom despejados por mes, 2016–2025: 1: 1.3 · 2: 2.1 · 3: 2.6 · 4: 3.0 · 5: 1.4 · 6: 0.9 · 7: 0.8 · 8: 1.8 · 9: 1.2 · 10: 3.3 · 11: 3.0 · 12: 0.9"
+     },
+     "why": {
+      "ko": "밖에서 한 장, 부스에서 한 장 — 그 달이 기회예요",
+      "en": "One shot outside, one in the booth — that's the month",
+      "es": "Una foto afuera y otra en la cabina: ese es el mes"
+     }
+    },
+    {
+     "id": "s2",
+     "kind": "month",
+     "text": {
+      "ko": "주말 낮 기온이 가장 높은 달은?",
+      "en": "Which month has the hottest weekend afternoons?",
+      "es": "¿Qué mes tiene las tardes de fin de semana más calurosas?"
+     },
+     "options": [
+      1,
+      8,
+      11
+     ],
+     "answer": 8,
+     "basis": {
+      "ko": "2016~2025년 토·일 낮 최고기온 평균이 가장 높은 달 — 1월 9°C · 2월 10°C · 3월 14°C · 4월 18°C · 5월 21°C · 6월 25°C · 7월 29°C · 8월 30°C · 9월 27°C · 10월 22°C · 11월 18°C · 12월 11°C",
+      "en": "Average Sat/Sun high, 2016–2025: Jan 9°C · Feb 10°C · Mar 14°C · Apr 18°C · May 21°C · Jun 25°C · Jul 29°C · Aug 30°C · Sep 27°C · Oct 22°C · Nov 18°C · Dec 11°C",
+      "es": "Máxima media de sáb/dom, 2016–2025: 1: 9°C · 2: 10°C · 3: 14°C · 4: 18°C · 5: 21°C · 6: 25°C · 7: 29°C · 8: 30°C · 9: 27°C · 10: 22°C · 11: 18°C · 12: 11°C"
+     },
+     "why": {
+      "ko": "더운 날엔 시원한 실내에서 친구랑 한 컷 🧊",
+      "en": "Too hot out? Cool off inside with a friend 🧊",
+      "es": "¿Mucho calor? Refréscate adentro con un amigo 🧊"
+     }
+    },
+    {
+     "id": "s3",
+     "kind": "num",
+     "text": {
+      "ko": "제주에서 1년 중 맑은 주말(토·일)은 평균 며칠일까?",
+      "en": "How many clear weekend days does Jeju get a year?",
+      "es": "¿Cuántos días de fin de semana despejados tiene Jeju al año?"
+     },
+     "options": [
+      14,
+      22,
+      30
+     ],
+     "answer": 22,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "강수 1mm 미만 + 구름양 40% 이하인 토·일, 2016~2025년 평균 1년에 22.3일 (주말은 1년에 약 104일)",
+      "en": "Sat/Sun with <1 mm rain and ≤40% clouds, 2016–2025: 22.3 a year (out of ~104 weekend days)",
+      "es": "Sáb/dom con <1 mm y ≤40% de nubes, 2016–2025: 22.3 al año (de ~104 días de fin de semana)"
+     },
+     "why": {
+      "ko": "맑은 주말은 하늘이 준 촬영 날. 그날은 꼭 남겨 두세요",
+      "en": "A clear weekend is a free photo day — capture it",
+      "es": "Un finde despejado es un día de fotos: guárdalo"
+     }
+    }
+   ],
+   "holiday": [
+    {
+     "id": "h1",
+     "kind": "num",
+     "text": {
+      "ko": "2027년 한국에서 3일 이상 이어지는 연휴는 몇 번일까?",
+      "en": "How many 3-day-plus weekends does South Korea get in 2027?",
+      "es": "¿Cuántos puentes de 3 días o más tiene Corea del Sur en 2027?"
+     },
+     "options": [
+      6,
+      9,
+      12
+     ],
+     "answer": 9,
+     "unit": {
+      "ko": "번",
+      "en": " times",
+      "es": " veces"
+     },
+     "basis": {
+      "ko": "전국 공휴일과 토·일이 3일 이상 이어지는 묶음 (휴가를 내야 이어지는 징검다리는 제외): 01/01~01/03, 02/06~02/09, 02/27~03/01, 05/01~05/03, 07/17~07/19, 08/14~08/16, 09/14~09/16, 10/02~10/04, 10/09~10/11",
+      "en": "National holidays + weekends, 3+ days in a row (no extra days off): Jan 01–Jan 03, Feb 06–Feb 09, Feb 27–Mar 01, May 01–May 03, Jul 17–Jul 19, Aug 14–Aug 16, Sep 14–Sep 16, Oct 02–Oct 04, Oct 09–Oct 11",
+      "es": "Feriados nacionales + fin de semana, 3+ días seguidos (sin días puente): 01/01–03/01, 06/02–09/02, 27/02–01/03, 01/05–03/05, 17/07–19/07, 14/08–16/08, 14/09–16/09, 02/10–04/10, 09/10–11/10"
+     },
+     "why": {
+      "ko": "단톡방에 날짜 공유할 차례 🎉",
+      "en": "Time to drop the dates in the group chat 🎉",
+      "es": "Hora de mandar las fechas al grupo 🎉"
+     }
+    },
+    {
+     "id": "h2",
+     "kind": "month",
+     "text": {
+      "ko": "2027년, 연휴로 쉬는 날이 가장 많은 달은?",
+      "en": "In 2027, which month has the most long-weekend days?",
+      "es": "En 2027, ¿qué mes tiene más días de puente?"
+     },
+     "options": [
+      2,
+      3,
+      12
+     ],
+     "answer": 2,
+     "basis": {
+      "ko": "달마다 3일 이상 연휴에 들어간 날 수: 1월 3 · 2월 6 · 3월 1 · 5월 3 · 7월 3 · 8월 3 · 9월 3 · 10월 6",
+      "en": "Long-weekend days per month: Jan 3 · Feb 6 · Mar 1 · May 3 · Jul 3 · Aug 3 · Sep 3 · Oct 6",
+      "es": "Días de puente por mes: 1: 3 · 2: 6 · 3: 1 · 5: 3 · 7: 3 · 8: 3 · 9: 3 · 10: 6"
+     },
+     "why": {
+      "ko": "그 달은 친구·가족 단위 방문이 몰리는 대목 후보",
+      "en": "That month is prime time for friends and family visits",
+      "es": "Ese mes es temporada alta para visitas con amigos y familia"
+     }
+    },
+    {
+     "id": "h3",
+     "kind": "num",
+     "text": {
+      "ko": "연휴인데 비까지 오는 날은 1년에 며칠쯤일까?",
+      "en": "How many long-weekend days a year turn out rainy?",
+      "es": "¿Cuántos días de puente al año llueve?"
+     },
+     "options": [
+      5,
+      7,
+      9
+     ],
+     "answer": 7,
+     "unit": {
+      "ko": "일",
+      "en": " days",
+      "es": " días"
+     },
+     "basis": {
+      "ko": "2016~2025년 3일 이상 연휴 가운데 강수 1mm 이상인 날, 1년 평균 6.6일",
+      "en": "Long-weekend days with ≥1 mm rain, 2016–2025: 6.6 a year",
+      "es": "Días de puente con ≥1 mm de lluvia, 2016–2025: 6.6 al año"
+     },
+     "why": {
+      "ko": "쉬는 날인데 비? 그날이 바로 사진 찍는 날 📸",
+      "en": "Day off and it's raining? That's your photo day 📸",
+      "es": "¿Día libre y llueve? Ese es tu día de fotos 📸"
+     }
+    }
+   ],
+   "golden": [
+    {
+     "id": "g1",
+     "kind": "time",
+     "text": {
+      "ko": "제주에서 1년 중 해가 가장 늦게 지는 시각은?",
+      "en": "In Jeju, what's the latest sunset of the year?",
+      "es": "En Jeju, ¿a qué hora es la puesta de sol más tardía del año?"
+     },
+     "options": [
+      "18:37",
+      "19:47",
+      "20:37"
+     ],
+     "answer": "19:47",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 늦은 날은 06월 25일 19:47",
+      "en": "Latest 2025 sunset (local time): Jun 25 at 19:47",
+      "es": "Puesta de sol más tardía de 2025 (hora local): 25/06 a las 19:47"
+     },
+     "why": {
+      "ko": "골든아워 사진은 이 시각 한 시간 전부터 🌅",
+      "en": "Golden hour starts about an hour before this 🌅",
+      "es": "La hora dorada empieza una hora antes 🌅"
+     }
+    },
+    {
+     "id": "g2",
+     "kind": "time",
+     "text": {
+      "ko": "그럼 1년 중 해가 가장 일찍 지는 시각은?",
+      "en": "And the earliest sunset of the year?",
+      "es": "¿Y la puesta de sol más temprana del año?"
+     },
+     "options": [
+      "16:41",
+      "17:26",
+      "18:26"
+     ],
+     "answer": "17:26",
+     "basis": {
+      "ko": "2025년 일몰 시각(현지 시간) 중 가장 이른 날은 11월 28일 무렵 17:26",
+      "en": "Earliest 2025 sunset (local time): around Nov 28 at 17:26",
+      "es": "Puesta de sol más temprana de 2025 (hora local): hacia el 28/11 a las 17:26"
+     },
+     "why": {
+      "ko": "해가 가장 일찍 지는 날은 동지가 아니라 그보다 조금 앞서요. 저녁 약속은 실내로",
+      "en": "The earliest sunset comes a bit before the shortest day. Evening plans? Go indoors",
+      "es": "El atardecer más temprano llega antes del día más corto. ¿Planes de noche? Bajo techo"
+     }
+    },
+    {
+     "id": "g3",
+     "kind": "num",
+     "text": {
+      "ko": "낮이 가장 긴 날과 가장 짧은 날, 낮 길이는 몇 시간 차이일까?",
+      "en": "How many more hours of daylight does the longest day have than the shortest?",
+      "es": "¿Cuántas horas más de luz tiene el día más largo que el más corto?"
+     },
+     "options": [
+      3,
+      4,
+      5
+     ],
+     "answer": 4,
+     "unit": {
+      "ko": "시간",
+      "en": " hours",
+      "es": " horas"
+     },
+     "basis": {
+      "ko": "2025년 낮 길이(해 뜰 때부터 질 때까지) 최대 − 최소 = 4.4시간",
+      "en": "2025 daylight, longest minus shortest day: 4.4 hours",
+      "es": "Luz del día en 2025, día más largo menos el más corto: 4.4 horas"
+     },
+     "why": {
+      "ko": "겨울엔 해가 빨리 지니까 사진은 일찍, 혹은 실내에서",
+      "en": "Winter light goes fast — shoot early, or shoot inside",
+      "es": "En invierno la luz se va rápido: fotos temprano o bajo techo"
+     }
+    }
+   ],
+   "cozy": [
+    {
+     "id": "c1",
+     "kind": "month",
+     "text": {
+      "ko": "가장 추운 달은?",
+      "en": "Which month is the coldest?",
+      "es": "¿Cuál es el mes más frío?"
+     },
+     "options": [
+      1,
+      5,
+      8
+     ],
+     "answer": 1,
+     "basis": {
+      "ko": "2016~2025년 달별 아침 최저기온 평균: 1월 5°C · 2월 5°C · 3월 8°C · 4월 12°C · 5월 16°C · 6월 21°C · 7월 25°C · 8월 26°C · 9월 23°C · 10월 18°C · 11월 12°C · 12월 7°C",
+      "en": "Average daily low by month, 2016–2025: Jan 5°C · Feb 5°C · Mar 8°C · Apr 12°C · May 16°C · Jun 21°C · Jul 25°C · Aug 26°C · Sep 23°C · Oct 18°C · Nov 12°C · Dec 7°C",
+      "es": "Mínima media por mes, 2016–2025: 1: 5°C · 2: 5°C · 3: 8°C · 4: 12°C · 5: 16°C · 6: 21°C · 7: 25°C · 8: 26°C · 9: 23°C · 10: 18°C · 11: 12°C · 12: 7°C"
+     },
+     "why": {
+      "ko": "가장 추운 달엔 따뜻한 실내 데이트가 정답 🧣",
+      "en": "Coldest month = cozy indoor date 🧣",
+      "es": "Mes más frío = cita acogedora bajo techo 🧣"
+     }
+    },
+    {
+     "id": "c2",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 가장 추웠던 날 아침 기온은?",
+      "en": "What was the coldest morning of the last 10 years?",
+      "es": "¿Cuál fue la mañana más fría de los últimos 10 años?"
+     },
+     "options": [
+      -6,
+      -3,
+      0
+     ],
+     "answer": -3,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 하루 최저기온 중 가장 낮은 날: 2016-01-24 -3.4°C",
+      "en": "Lowest daily low, 2016–2025: Jan 24, 2016 at -3.4°C",
+      "es": "Mínima más baja, 2016–2025: 24/01/2016 con -3.4°C"
+     },
+     "why": {
+      "ko": "기록적인 추위도 사진으로 남기면 추억",
+      "en": "Even a record cold snap makes a good memory",
+      "es": "Hasta el frío récord se vuelve un buen recuerdo"
+     }
+    },
+    {
+     "id": "c3",
+     "kind": "num",
+     "text": {
+      "ko": "가장 더운 달과 가장 추운 달, 낮 기온은 몇 도 차이일까?",
+      "en": "How many degrees apart are the warmest and coldest months (daytime highs)?",
+      "es": "¿Cuántos grados de diferencia hay entre el mes más cálido y el más frío (máximas)?"
+     },
+     "options": [
+      13,
+      21,
+      29
+     ],
+     "answer": 21,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 달별 낮 최고기온 평균의 최대 − 최소 = 21.2°C",
+      "en": "Monthly average high, warmest minus coldest, 2016–2025: 21.2°C",
+      "es": "Máxima media mensual, más cálido menos más frío, 2016–2025: 21.2°C"
+     },
+     "why": {
+      "ko": "계절이 바뀔 때마다 새 프레임으로 기록해 보세요",
+      "en": "New season, new frame",
+      "es": "Nueva estación, nuevo marco"
+     }
+    }
+   ],
+   "special": [
+    {
+     "id": "d1",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 크리스마스에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Christmases were rainy?",
+      "es": "En los últimos 10 años, ¿cuántas Navidades llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 1,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 12월 25일 강수량 1mm 이상인 해: 1번",
+      "en": "Dec 25 with ≥1 mm rain, 2016–2025: 1 times",
+      "es": "25 de diciembre con ≥1 mm, 2016–2025: 1 veces"
+     },
+     "why": {
+      "ko": "크리스마스 사진은 날씨 걱정 없는 실내에서 🎄",
+      "en": "Christmas photos: weather-proof indoors 🎄",
+      "es": "Fotos de Navidad: bajo techo, sin depender del clima 🎄"
+     }
+    },
+    {
+     "id": "d2",
+     "kind": "num",
+     "text": {
+      "ko": "핼러윈(10월 31일) 낮 기온은 평균 몇 도일까?",
+      "en": "What's the average high on Halloween (Oct 31)?",
+      "es": "¿Cuál es la máxima media en Halloween (31 de octubre)?"
+     },
+     "options": [
+      14,
+      20,
+      26
+     ],
+     "answer": 20,
+     "unit": {
+      "ko": "°C",
+      "en": "°C",
+      "es": "°C"
+     },
+     "basis": {
+      "ko": "2016~2025년 10월 31일 낮 최고기온 평균 19.8°C",
+      "en": "Average Oct 31 high, 2016–2025: 19.8°C",
+      "es": "Máxima media del 31 de octubre, 2016–2025: 19.8°C"
+     },
+     "why": {
+      "ko": "코스튬이 날씨에 맞는지 미리 체크 🎃",
+      "en": "Check if your costume fits the weather 🎃",
+      "es": "Revisa si tu disfraz va con el clima 🎃"
+     }
+    },
+    {
+     "id": "d3",
+     "kind": "num",
+     "text": {
+      "ko": "지난 10년, 밸런타인데이에 비가 온 해는 몇 번일까?",
+      "en": "In the last 10 years, how many Valentine's Days were rainy?",
+      "es": "En los últimos 10 años, ¿cuántos San Valentín llovió?"
+     },
+     "options": [
+      1,
+      3,
+      5
+     ],
+     "answer": 3,
+     "unit": {
+      "ko": "번 (10년 중)",
+      "en": " of 10 years",
+      "es": " de 10 años"
+     },
+     "basis": {
+      "ko": "2016~2025년 2월 14일 강수량 1mm 이상인 해: 3번",
+      "en": "Feb 14 with ≥1 mm rain, 2016–2025: 3 times",
+      "es": "14 de febrero con ≥1 mm, 2016–2025: 3 veces"
+     },
+     "why": {
+      "ko": "데이트 사진은 비가 와도 OK인 곳에서 💝",
+      "en": "Date photos? Pick a rain-proof spot 💝",
+      "es": "¿Fotos de cita? Elige un lugar a prueba de lluvia 💝"
+     }
+    }
+   ]
+  },
   "us-other": {
    "holiday": [
     {
@@ -5480,6 +8630,306 @@
    "12": {
     "rain": 1.1,
     "clear": 4.6
+   }
+  },
+  "incheon": {
+   "1": {
+    "rain": 0.7,
+    "clear": 4.3
+   },
+   "2": {
+    "rain": 1.2,
+    "clear": 3.8
+   },
+   "3": {
+    "rain": 1.9,
+    "clear": 3.6
+   },
+   "4": {
+    "rain": 1.9,
+    "clear": 3.4
+   },
+   "5": {
+    "rain": 2.5,
+    "clear": 2.8
+   },
+   "6": {
+    "rain": 1.7,
+    "clear": 2.8
+   },
+   "7": {
+    "rain": 5.0,
+    "clear": 0.9
+   },
+   "8": {
+    "rain": 3.7,
+    "clear": 2.1
+   },
+   "9": {
+    "rain": 2.0,
+    "clear": 2.3
+   },
+   "10": {
+    "rain": 1.9,
+    "clear": 3.3
+   },
+   "11": {
+    "rain": 1.2,
+    "clear": 4.1
+   },
+   "12": {
+    "rain": 2.0,
+    "clear": 3.5
+   }
+  },
+  "daegu": {
+   "1": {
+    "rain": 0.7,
+    "clear": 4.6
+   },
+   "2": {
+    "rain": 1.5,
+    "clear": 4.0
+   },
+   "3": {
+    "rain": 2.2,
+    "clear": 3.5
+   },
+   "4": {
+    "rain": 1.9,
+    "clear": 3.6
+   },
+   "5": {
+    "rain": 2.3,
+    "clear": 2.1
+   },
+   "6": {
+    "rain": 2.4,
+    "clear": 1.3
+   },
+   "7": {
+    "rain": 3.7,
+    "clear": 1.2
+   },
+   "8": {
+    "rain": 3.1,
+    "clear": 2.1
+   },
+   "9": {
+    "rain": 3.6,
+    "clear": 1.2
+   },
+   "10": {
+    "rain": 2.1,
+    "clear": 3.3
+   },
+   "11": {
+    "rain": 1.4,
+    "clear": 4.0
+   },
+   "12": {
+    "rain": 0.8,
+    "clear": 4.5
+   }
+  },
+  "daejeon": {
+   "1": {
+    "rain": 1.0,
+    "clear": 2.9
+   },
+   "2": {
+    "rain": 1.6,
+    "clear": 3.0
+   },
+   "3": {
+    "rain": 2.3,
+    "clear": 3.2
+   },
+   "4": {
+    "rain": 2.1,
+    "clear": 3.4
+   },
+   "5": {
+    "rain": 2.3,
+    "clear": 2.6
+   },
+   "6": {
+    "rain": 2.5,
+    "clear": 1.6
+   },
+   "7": {
+    "rain": 4.8,
+    "clear": 1.1
+   },
+   "8": {
+    "rain": 3.0,
+    "clear": 2.0
+   },
+   "9": {
+    "rain": 2.4,
+    "clear": 1.7
+   },
+   "10": {
+    "rain": 2.1,
+    "clear": 3.9
+   },
+   "11": {
+    "rain": 1.6,
+    "clear": 3.7
+   },
+   "12": {
+    "rain": 1.2,
+    "clear": 3.1
+   }
+  },
+  "gwangju": {
+   "1": {
+    "rain": 1.4,
+    "clear": 1.8
+   },
+   "2": {
+    "rain": 1.7,
+    "clear": 2.3
+   },
+   "3": {
+    "rain": 2.3,
+    "clear": 3.2
+   },
+   "4": {
+    "rain": 2.4,
+    "clear": 3.0
+   },
+   "5": {
+    "rain": 2.4,
+    "clear": 2.5
+   },
+   "6": {
+    "rain": 3.1,
+    "clear": 1.2
+   },
+   "7": {
+    "rain": 4.6,
+    "clear": 1.2
+   },
+   "8": {
+    "rain": 3.8,
+    "clear": 1.4
+   },
+   "9": {
+    "rain": 3.4,
+    "clear": 1.3
+   },
+   "10": {
+    "rain": 1.8,
+    "clear": 3.4
+   },
+   "11": {
+    "rain": 1.5,
+    "clear": 3.1
+   },
+   "12": {
+    "rain": 2.3,
+    "clear": 1.3
+   }
+  },
+  "ulsan": {
+   "1": {
+    "rain": 1.2,
+    "clear": 4.8
+   },
+   "2": {
+    "rain": 2.0,
+    "clear": 4.2
+   },
+   "3": {
+    "rain": 2.5,
+    "clear": 3.2
+   },
+   "4": {
+    "rain": 2.1,
+    "clear": 3.3
+   },
+   "5": {
+    "rain": 2.6,
+    "clear": 2.0
+   },
+   "6": {
+    "rain": 2.8,
+    "clear": 1.8
+   },
+   "7": {
+    "rain": 3.9,
+    "clear": 1.2
+   },
+   "8": {
+    "rain": 3.6,
+    "clear": 2.1
+   },
+   "9": {
+    "rain": 3.8,
+    "clear": 1.3
+   },
+   "10": {
+    "rain": 2.0,
+    "clear": 2.9
+   },
+   "11": {
+    "rain": 1.5,
+    "clear": 3.8
+   },
+   "12": {
+    "rain": 1.0,
+    "clear": 5.0
+   }
+  },
+  "jeju": {
+   "1": {
+    "rain": 2.7,
+    "clear": 1.3
+   },
+   "2": {
+    "rain": 2.6,
+    "clear": 2.1
+   },
+   "3": {
+    "rain": 3.0,
+    "clear": 2.6
+   },
+   "4": {
+    "rain": 2.3,
+    "clear": 3.0
+   },
+   "5": {
+    "rain": 3.4,
+    "clear": 1.4
+   },
+   "6": {
+    "rain": 3.8,
+    "clear": 0.9
+   },
+   "7": {
+    "rain": 5.6,
+    "clear": 0.8
+   },
+   "8": {
+    "rain": 4.3,
+    "clear": 1.8
+   },
+   "9": {
+    "rain": 4.7,
+    "clear": 1.2
+   },
+   "10": {
+    "rain": 2.6,
+    "clear": 3.3
+   },
+   "11": {
+    "rain": 2.0,
+    "clear": 3.0
+   },
+   "12": {
+    "rain": 3.1,
+    "clear": 0.9
    }
   }
  },
